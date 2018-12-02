@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
+set (CMAKE_CXX_STANDARD 11)
 project(Agario)
 
 #Find sources
@@ -13,7 +14,7 @@ add_executable(Test${PROJECT_NAME} ${sources_test})
 target_link_libraries(${PROJECT_NAME} sfml-window sfml-system)
 
 #Link header directories
-target_include_directories(${PROJECT_NAME} PUBLIC include/models)
+target_include_directories(${PROJECT_NAME} PUBLIC include/models include/controllers include/views)
 
 #Link test libraries
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
