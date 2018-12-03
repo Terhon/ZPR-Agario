@@ -10,6 +10,7 @@
 #include <stack>
 
 class AppController;
+class StartModel;
 
 class App
 {
@@ -23,6 +24,7 @@ class App
 
     public:
     App();
+    ~App();
 
     void run();
     void update();

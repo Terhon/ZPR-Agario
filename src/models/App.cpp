@@ -8,6 +8,11 @@ App::App()
     window = nullptr;
 }
 
+App::~App(){ 
+    while(!state_stack.empty())
+        state_stack.pop();
+}
+
 void App::run()
 {
     sf::Window window(sf::VideoMode(800, 600), "My window");
