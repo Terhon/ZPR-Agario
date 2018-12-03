@@ -15,7 +15,7 @@ void App::run()
     sf::Event event;
     while(running)
     {
-        sleep(1);
+   //     sleep(1);
 
         window.pollEvent(event);
         controller->handleEvents(event);

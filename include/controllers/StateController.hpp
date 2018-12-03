@@ -1,8 +1,8 @@
 #ifndef STATECONTROLLER_HPP
 #define STATECONTROLLER_HPP
 
-#include "StateModel.hpp"
-#include "StateView.hpp"
+class StateModel;
+class StateView;
 
 class StateController {
     
