@@ -1,7 +1,6 @@
 #include <AppController.hpp>
 
-AppController::AppController(App* app) : app(app) 
-{}
+AppController::AppController(App* app) : app(app) {}
 
 void AppController::handleEvents(sf::Event event) 
 {

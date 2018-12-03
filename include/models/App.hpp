@@ -6,7 +6,7 @@
 #include <AppController.hpp>
 #include <AppView.hpp>
 #include <SFML/Window.hpp>
-#include "StateModel.hpp"
+#include "StartModel.hpp"
 #include <stack>
 
 class AppController;

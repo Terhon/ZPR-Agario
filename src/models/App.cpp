@@ -23,7 +23,8 @@ void App::run()
 }
 
 void App::update(){
-
+    if(state_stack.empty())
+        state_stack.push(new StartModel());
 }
 
 void App::putOnStack(StateModel * state){

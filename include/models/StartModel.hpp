@@ -9,4 +9,4 @@ class StartModel : public StateModel {
         virtual void update();
 };
 
-#endif STARTMODEL_HPP
+#endif
