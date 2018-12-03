@@ -31,6 +31,7 @@ class App
     void pushStack(StateModel * state);
     void popStack();
     StateModel * peekStack();
+    int stackSize() {return state_stack.size();};
 };
 
 #endif
