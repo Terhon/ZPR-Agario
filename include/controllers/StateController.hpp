@@ -11,4 +11,4 @@ class StateController {
         virtual void updateView() = 0;
 };
 
-#endif STATECONTROLLER_HPP
+#endif

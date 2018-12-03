@@ -1,7 +1,7 @@
 #ifndef STARTMODEL_HPP
 #define STARTMODEL_HPP
 
-#include "StateModel.hpp"
+#include <StateModel.hpp>
 
 class StartModel : public StateModel {
     

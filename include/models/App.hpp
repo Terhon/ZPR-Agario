@@ -28,7 +28,7 @@ class App
     void update();
     void setRunning(bool val){ running = val; }
     sf::Window* getWindow(){ return window; }
-    void putOnStack(StateModel * state);
+    void pushStack(StateModel * state);
     void popStack();
     StateModel * peekStack();
 };
