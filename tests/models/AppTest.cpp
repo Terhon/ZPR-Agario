@@ -6,5 +6,6 @@
 
 BOOST_AUTO_TEST_CASE(why)
 {
-      BOOST_CHECK(1 + 1 == 2);
+  App app;
+  app.getWindow();
 }

@@ -6,7 +6,6 @@ enable_testing()
 
 #Link header directories
 include_directories(${PROJECT_NAME} PUBLIC include/models include/controllers include/views)
-include_directories(Test${PROJECT_NAME} PUBLIC include/models include/controllers include/views)
 
 #Find sources
 file(GLOB_RECURSE sources src/*.cpp)
@@ -23,16 +22,20 @@ target_link_libraries(${PROJECT_NAME} sfml-window sfml-system)
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 #target_link_libraries(Test${PROJECT_NAME} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
 
+get_filename_component(main ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp ABSOLUTE)
+list(REMOVE_ITEM sources ${main})
+
 foreach(testSrc ${sources_test})
         #Extract the filename without an extension (NAME_WE)
         get_filename_component(testName ${testSrc} NAME_WE)
 
         #Add compile target
-        add_executable(${testName} ${testSrc})
+        add_executable(${testName} ${testSrc} ${sources})
 
         #link to Boost libraries AND your targets and dependencies
         target_link_libraries(${testName} ${Boost_LIBRARIES})
-        include_directories(${testName} PUBLIC include/models include/controllers include/views)
+        target_link_libraries(${testName} sfml-window sfml-system)
+        target_include_directories(${testName} PUBLIC include/models include/controllers include/views)
 
         #I like to move testing binaries into a testBin directory
         set_target_properties(${testName} PROPERTIES 
