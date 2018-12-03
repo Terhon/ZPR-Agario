@@ -15,8 +15,8 @@ void App::run()
     sf::Event event;
     while(running)
     {
-        window.pollEvent(event);
-        controller->handleEvents(event);
+        if(window.pollEvent(event))
+            controller->handleEvents(event);
         update();
         view->draw();
     }
@@ -26,7 +26,7 @@ void App::update(){
 
 }
 
-void App::putOnStack(StateModel * state){
+void App::pushStack(StateModel * state){
     state_stack.push(state);
 }
 

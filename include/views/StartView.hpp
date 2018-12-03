@@ -1,7 +1,7 @@
 #ifndef STARTVIEW_HPP
 #define STARTVIEW_HPP
 
-#include "StateView.hpp"
+#include <StateView.hpp>
 
 class StartView : public StateView {
     
@@ -9,4 +9,4 @@ class StartView : public StateView {
         virtual void draw();
 };
 
-#endif STARTVIEW_HPP
+#endif

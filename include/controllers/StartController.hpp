@@ -1,9 +1,9 @@
 #ifndef STARTCONTROLLER_HPP
 #define STARTCONTROLLER_HPP
 
-#include "StateController.hpp"
-#include "StartModel.hpp"
-#include "StartView.hpp"
+#include <StateController.hpp>
+#include <StartModel.hpp>
+#include <StartView.hpp>
 
 class StartController : public StateController {
     
@@ -20,4 +20,4 @@ class StartController : public StateController {
         StartView view;
 };
 
-#endif STARTCONTROLLER_HPP
+#endif
