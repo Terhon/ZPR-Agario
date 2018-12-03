@@ -7,4 +7,4 @@ class StateModel {
         virtual void update() = 0;
 };
 
-#endif STATEMODEL_HPP
+#endif 

@@ -15,11 +15,25 @@ void App::run()
     sf::Event event;
     while(running)
     {
-   //     sleep(1);
-
         window.pollEvent(event);
         controller->handleEvents(event);
         update();
         view->draw();
     }
+}
+
+void App::update(){
+
+}
+
+void App::putOnStack(StateModel * state){
+    state_stack.push(state);
+}
+
+void App::popStack(){
+    state_stack.pop();
+}
+
+StateModel * App::peekStack() {
+    return state_stack.top();
 }
