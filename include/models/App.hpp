@@ -10,6 +10,7 @@
 #include <stack>
 
 class AppController;
+class StartModel;
 
 class App
 {
@@ -23,6 +24,7 @@ class App
 
     public:
     App();
+    ~App();
 
     void run();
     void update();
@@ -31,7 +33,7 @@ class App
     void pushStack(StateModel * state);
     void popStack();
     StateModel * peekStack();
-    int stackSize(){ return state_stack.size(); }
+    int stackSize() {return state_stack.size();};
 };
 
 #endif
