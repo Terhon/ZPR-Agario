@@ -16,11 +16,6 @@ struct AppFixture {
 
     App * app;
 };
-/*
-BOOST_AUTO_TEST_CASE(peek_returns_null_on_new_app){
-    AppFixture f;
-    BOOST_CHECK(f.app->peekStack() == nullptr);
-}*/
 
 BOOST_AUTO_TEST_CASE(new_app_apps_stacks_size_is_zero){
     AppFixture f;

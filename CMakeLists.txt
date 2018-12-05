@@ -13,14 +13,12 @@ file(GLOB_RECURSE sources_test tests/*.cpp)
 
 #Set targets
 add_executable(${PROJECT_NAME} ${sources})
-#add_executable(Test${PROJECT_NAME} ${sources_test})
 
 #Link SFML libraries
 target_link_libraries(${PROJECT_NAME} sfml-window sfml-system)
 
 #Link test libraries
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
-#target_link_libraries(Test${PROJECT_NAME} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
 
 get_filename_component(main ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp ABSOLUTE)
 list(REMOVE_ITEM sources ${main})
@@ -35,7 +33,7 @@ foreach(testSrc ${sources_test})
         #link to Boost libraries AND your targets and dependencies
         target_link_libraries(${testName} ${Boost_LIBRARIES})
         target_link_libraries(${testName} sfml-window sfml-system)
-        target_include_directories(${testName} PUBLIC include/models include/controllers include/views)
+        #target_include_directories(${testName} PUBLIC include/models include/controllers include/views)
 
         #I like to move testing binaries into a testBin directory
         set_target_properties(${testName} PROPERTIES 
