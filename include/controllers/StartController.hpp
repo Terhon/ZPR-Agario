@@ -5,19 +5,12 @@
 #include <StartModel.hpp>
 #include <StartView.hpp>
 
-class StartController : public StateController {
-    
+class StartController : public StateController 
+{
     public:
-        virtual void udpateModel() {
-            model.update();
-        };
-        virtual void updateView() {
-            view.draw();
-        };
+    StartController(StartModel* m){model = m;}
 
-    private:
-        StartModel model;
-        StartView view;
+    void handleEvents(sf::Event event);
 };
 
 #endif
