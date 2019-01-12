@@ -5,11 +5,12 @@
 #include <unistd.h>
 #include <AppController.hpp>
 #include <AppView.hpp>
-#include <SFML/Window.hpp>
-#include "StartModel.hpp"
+#include <SFML/Graphics.hpp>
+#include <StartModel.hpp>
 #include <stack>
 
 class AppController;
+class AppView;
 class StartModel;
 
 class App
@@ -17,7 +18,7 @@ class App
     private:
     AppController* controller;
     AppView* view;
-    sf::Window* window;
+    sf::RenderWindow* window;
     std::stack<StateModel*> state_stack;
 
     bool running;
@@ -26,14 +27,16 @@ class App
     App();
     ~App();
 
+    void initWindow();
     void run();
+
     void update();
     void setRunning(bool val){ running = val; }
-    sf::Window* getWindow(){ return window; }
     void pushStack(StateModel * state);
     void popStack();
-    StateModel * peekStack();
+    StateModel* peekStack();
     int stackSize() {return state_stack.size();};
+    sf::RenderWindow* getWindow(){ return window; }
 };
 
 #endif

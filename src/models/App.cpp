@@ -3,9 +3,9 @@
 App::App() 
 {
     controller = new AppController(this);
-    view = new AppView();
+    view = new AppView(this);
     running = true;
-    window = nullptr;
+    window = new sf::RenderWindow();
 }
 
 App::~App(){ 
@@ -13,14 +13,21 @@ App::~App(){
         state_stack.pop();
 }
 
+void App::initWindow()
+{
+    window->create(sf::VideoMode(800, 600), "ZPR.io");
+    window->setFramerateLimit(60);
+}
+
 void App::run()
 {
-    sf::Window window(sf::VideoMode(800, 600), "My window");
+    initWindow();
+    state_stack.push(new StartModel());
 
     sf::Event event;
     while(running)
     {
-        if(window.pollEvent(event))
+        while(window->pollEvent(event))
             controller->handleEvents(event);
         update();
         view->draw();
@@ -28,8 +35,7 @@ void App::run()
 }
 
 void App::update(){
-    if(state_stack.empty())
-        state_stack.push(new StartModel());
+    state_stack.top()->update();
 }
 
 void App::pushStack(StateModel * state){
@@ -40,6 +46,6 @@ void App::popStack(){
     state_stack.pop();
 }
 
-StateModel * App::peekStack() {
+StateModel* App::peekStack() {
     return state_stack.top();
 }

@@ -2,11 +2,13 @@
 #define STARTMODEL_HPP
 
 #include <StateModel.hpp>
+#include <StartView.hpp>
 
-class StartModel : public StateModel {
-    
+class StartModel : public StateModel 
+{
     public:
-        virtual void update();
+    StartModel(){view = new StartView();}
+    virtual void update();
 };
 
 #endif

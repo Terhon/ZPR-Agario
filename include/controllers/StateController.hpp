@@ -4,11 +4,13 @@
 class StateModel;
 class StateView;
 
-class StateController {
-    
+class StateController 
+{    
+    protected:
+    StateModel* model;
+
     public:
-        virtual void udpateModel() = 0;
-        virtual void updateView() = 0;
+    virtual void updateModel() = 0;
 };
 
 #endif

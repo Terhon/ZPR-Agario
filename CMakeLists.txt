@@ -15,7 +15,7 @@ file(GLOB_RECURSE sources_test tests/*.cpp)
 add_executable(${PROJECT_NAME} ${sources})
 
 #Link SFML libraries
-target_link_libraries(${PROJECT_NAME} sfml-window sfml-system)
+target_link_libraries(${PROJECT_NAME} sfml-window sfml-system sfml-graphics)
 
 #Link test libraries
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
@@ -32,7 +32,7 @@ foreach(testSrc ${sources_test})
 
         #link to Boost libraries AND your targets and dependencies
         target_link_libraries(${testName} ${Boost_LIBRARIES})
-        target_link_libraries(${testName} sfml-window sfml-system)
+        target_link_libraries(${testName} sfml-window sfml-system sfml-graphics)
         #target_include_directories(${testName} PUBLIC include/models include/controllers include/views)
 
         #I like to move testing binaries into a testBin directory
