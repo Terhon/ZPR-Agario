@@ -27,9 +27,9 @@ void PauseView::loadText(){
         score.setPosition(100, 120);
 
         instruction.setFont(font); 
-        instruction.setString("Press P to resume,\nEsc to end the game.\n\nEat balls smaller than you,\navoid those that can eat you.\nUse mouse to move.");
+        instruction.setString("Press P to resume,\nR to reset the game.\n\nEat balls smaller than you,\navoid those that can eat you.\nUse mouse to move.");
         instruction.setCharacterSize(25); // in pixels, not points!
-        instruction.setFillColor(sf::Color::Black);
+        instruction.setFillColor(sf::Color::Red);
     //    instruction.setStyle(sf::Text::Bold);
         instruction.setPosition(100, 240);
     }
