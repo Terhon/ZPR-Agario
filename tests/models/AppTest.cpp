@@ -18,7 +18,7 @@ struct AppFixture {
 };
 
 BOOST_FIXTURE_TEST_CASE(push_stack_increases_stack_size, AppFixture){
-    app->pushStack(new StartModel());
+    app->pushStack(new StartModel(app));
     BOOST_CHECK(app->stackSize() == 1);
 }
 

@@ -1,9 +1,9 @@
 #ifndef STATEMODEL_HPP
 #define STATEMODEL_HPP
 
-#include <App.hpp>
 #include <StateView.hpp>
 #include <StateController.hpp>
+#include <App.hpp>
 
 class StateModel 
 {   

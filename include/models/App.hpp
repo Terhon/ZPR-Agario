@@ -1,18 +1,18 @@
 #ifndef APP_H
 #define APP_H
 
+class AppController;
+class AppView;
+class StartModel;
+class StateModel;
+
 #include <iostream>
 #include <unistd.h>
 #include <AppController.hpp>
 #include <AppView.hpp>
 #include <SFML/Graphics.hpp>
-#include <StartModel.hpp>
+#include <StateModel.hpp>
 #include <stack>
-
-class AppController;
-class AppView;
-class StartModel;
-class StateModel;
 
 class App
 {
