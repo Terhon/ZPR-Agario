@@ -1,6 +1,7 @@
 #ifndef AGARIO_PAUSEVIEW_HPP
 #define AGARIO_PAUSEVIEW_HPP
 
+#include <StateView.hpp>
 
 class PauseView: public StateView
 {
