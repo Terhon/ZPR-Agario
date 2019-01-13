@@ -12,10 +12,10 @@ void PlayModel::update(){
 
 void PlayModel::pushPause()
 {
-    app->pushStack(new PauseModel());
+    app->pushStack(new PauseModel(app));
 }
 
 void PlayModel::pushEnd()
 {
-    app->pushStack(new EndModel());
+    app->pushStack(new EndModel(app));
 }
