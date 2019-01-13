@@ -4,7 +4,8 @@
 #include <StateView.hpp>
 #include <iostream>
 
-class StartView : public StateView {
+class StartView : public StateView
+{
     private:
     sf::Image background;
     sf::Texture texture;

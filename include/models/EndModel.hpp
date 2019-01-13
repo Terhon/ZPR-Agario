@@ -10,6 +10,8 @@ class EndModel : public StateModel
     public:
     EndModel(App* a);
     virtual void update();
+
+    void resetGame();
 };
 
 #endif

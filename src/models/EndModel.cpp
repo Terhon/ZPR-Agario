@@ -1,4 +1,5 @@
 #include <EndModel.hpp>
+#include <StartModel.hpp>
 
 EndModel::EndModel(App* a)
 {
@@ -8,5 +9,12 @@ EndModel::EndModel(App* a)
 }
 
 void EndModel::update(){
+}
+
+void EndModel::resetGame()
+{
+    while(app->stackSize() > 0)
+        app->popStack();
+    app->pushStack(new StartModel(app));
 }
 
