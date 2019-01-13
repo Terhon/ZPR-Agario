@@ -1,49 +1,39 @@
 #include <PauseView.hpp>
 
 PauseView::PauseView() {
-    loadBackground();
+    bckgColor = sf::Color::Black;
     loadText();
 }
 
 void PauseView::draw(sf::RenderWindow* window)
 {
-    window->draw(sprite);
-    window->draw(title);
+    window->clear(bckgColor);
     window->draw(instruction);
-}
-
-void PauseView::loadBackground(){
-    try {
-        background.loadFromFile("resources/background.jpg");
-        texture.loadFromImage(background);
-        sprite.setTexture(texture, true);
-    }
-    catch(const std::exception& e){
-        std::cout << "Failed loading background" << std::endl;
-    }
 }
 
 void PauseView::loadText(){
     try {
         font.loadFromFile("resources/Manjari-Thin.otf");
 
-        title.setFont(font);
-        title.setString("Pause");
-        title.setCharacterSize(50); // in pixels, not points!
-        title.setFillColor(sf::Color::Black);
-        title.setStyle(sf::Text::Bold);
-        title.setPosition(100, 100);
+        std::stringstream ss;
+        ss << "Score: " << 0; //model.getScore() zamiast 0
+        std::string s = ss.str();
 
-        instruction.setFont(font);
-        instruction.setString("Press P to unpause\nPress R to restart");
-        instruction.setCharacterSize(40); // in pixels, not points!
+        score.setFont(font); 
+        score.setString(s);
+        score.setCharacterSize(35); // in pixels, not points!
+        score.setFillColor(sf::Color::Black);
+        score.setStyle(sf::Text::Bold);
+        score.setPosition(100, 120);
+
+        instruction.setFont(font); 
+        instruction.setString("Press P to resume,\nEsc to end the game.\n\nEat balls smaller than you,\navoid those that can eat you.\nUse mouse to move.");
+        instruction.setCharacterSize(25); // in pixels, not points!
         instruction.setFillColor(sf::Color::Black);
-        //instruction.setStyle(sf::Text::Bold);
-        instruction.setPosition(100, 220);
+    //    instruction.setStyle(sf::Text::Bold);
+        instruction.setPosition(100, 240);
     }
     catch(const std::exception& e){
         std::cout << "Failed loading font" << std::endl;
-    }
-
-
+    } 
 }
