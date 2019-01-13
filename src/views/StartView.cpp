@@ -25,7 +25,7 @@ void StartView::loadBackground(){
 
 void StartView::loadText(){
     try {
-        font.loadFromFile("/home/gabe/zpr/proj/ZPR-Agario/resources/Manjari-Thin.otf");
+        font.loadFromFile("resources/Manjari-Thin.otf");
 
         title.setFont(font); 
         title.setString("Agario 2.0");
