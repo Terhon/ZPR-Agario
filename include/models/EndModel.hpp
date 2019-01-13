@@ -3,11 +3,12 @@
 
 #include <StateModel.hpp>
 #include <EndView.hpp>
+#include <EndController.hpp>
 
 class EndModel : public StateModel 
 {
     public:
-    EndModel(){view = new EndView();}
+    EndModel(App* a);
     virtual void update();
 };
 
