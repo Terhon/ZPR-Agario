@@ -11,7 +11,7 @@ class StartModel : public StateModel
     StartModel(App* a);
     virtual void update();
 
-    void pushStart();
+    void pushPlay();
 };
 
 #endif

@@ -9,7 +9,9 @@ PlayModel::PlayModel(App* a)
     controller = new PlayController(this);
 }
 
-void PlayModel::update(){
+void PlayModel::update()
+{
+
 }
 
 void PlayModel::pushPause()

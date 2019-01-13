@@ -1,4 +1,5 @@
 #include <StartModel.hpp>
+#include <PlayModel.hpp>
 
 StartModel::StartModel(App* a)
 {
@@ -11,7 +12,7 @@ void StartModel::update(){
     
 }
 
-void StartModel::pushStart()
+void StartModel::pushPlay()
 {
-    app->pushStack(new StartModel(app));
+    app->pushStack(new PlayModel(app));
 }

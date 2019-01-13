@@ -1,4 +1,5 @@
 #include <PauseModel.hpp>
+#include <StartModel.hpp>
 
 PauseModel::PauseModel(App* a)
 {
@@ -7,12 +8,21 @@ PauseModel::PauseModel(App* a)
     controller = new PauseController(this);
 }
 
-void PauseModel::update(){
+void PauseModel::update()
+{
+
 }
 
 void PauseModel::popPause()
 {
     app->popStack();
+}
+
+void PauseModel::resetGame()
+{
+    while(app->stackSize() > 0)
+        app->popStack();
+    app->pushStack(new StartModel(app));
 }
 
 

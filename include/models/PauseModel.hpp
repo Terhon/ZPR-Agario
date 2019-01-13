@@ -12,6 +12,7 @@ class PauseModel : public StateModel
     virtual void update();
 
     void popPause();
+    void resetGame();
 };
 
 #endif //AGARIO_PAUSEMODEL_HPP
