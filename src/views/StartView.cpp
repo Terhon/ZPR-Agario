@@ -7,13 +7,9 @@ StartView::StartView() {
 
 void StartView::draw(sf::RenderWindow* window)
 {
-    sf::CircleShape shape(50.f);
-    shape.setFillColor(sf::Color::Red);
-    window->draw(shape);
     window->draw(sprite);
     window->draw(title);
     window->draw(instruction);
-
 }
 
 void StartView::loadBackground(){
