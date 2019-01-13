@@ -1,6 +1,10 @@
 #ifndef AGARIO_PLAYCONTROLLER_HPP
 #define AGARIO_PLAYCONTROLLER_HPP
 
+#include <PlayModel.hpp>
+#include <StateController.hpp>
+#include <PlayView.hpp>
+
 class PlayModel;
 
 class PlayController : public StateController
