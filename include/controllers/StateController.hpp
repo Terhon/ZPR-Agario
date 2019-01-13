@@ -10,7 +10,7 @@ class StateController
     StateModel* model;
 
     public:
-    virtual void updateModel() = 0;
+    virtual void handleEvents(sf::Event event) = 0;
 };
 
 #endif

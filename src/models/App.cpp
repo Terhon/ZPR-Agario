@@ -22,7 +22,7 @@ void App::initWindow()
 void App::run()
 {
     initWindow();
-    state_stack.push(new StartModel());
+    state_stack.push(new StartModel(this));
 
     sf::Event event;
     while(running)

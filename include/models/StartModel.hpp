@@ -3,12 +3,15 @@
 
 #include <StateModel.hpp>
 #include <StartView.hpp>
+#include <StartController.hpp>
 
 class StartModel : public StateModel 
 {
     public:
-    StartModel(){view = new StartView();}
+    StartModel(App* a);
     virtual void update();
+
+    void pushStart();
 };
 
 #endif

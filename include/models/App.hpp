@@ -12,6 +12,7 @@
 class AppController;
 class AppView;
 class StartModel;
+class StateModel;
 
 class App
 {
