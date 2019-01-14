@@ -18,3 +18,8 @@ void EndModel::resetGame()
     app->pushStack(new StartModel(app));
 }
 
+void EndModel::exitGame()
+{
+    app->setRunning(false);
+}
+

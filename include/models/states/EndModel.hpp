@@ -12,6 +12,7 @@ class EndModel : public StateModel
     virtual void update();
 
     void resetGame();
+    void exitGame();
 };
 
 #endif

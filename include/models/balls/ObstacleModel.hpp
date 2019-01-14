@@ -7,7 +7,7 @@ class ObstacleModel : public BallModel {
     private:
     public:
         ObstacleModel(int x, int y, int radius) : BallModel(x, y, radius) {}
-        std::vector<BallModel>::iterator checkCollision(std::vector<BallModel> v);    
+        virtual std::vector<BallModel*>::iterator checkCollision(std::vector<BallModel*>* v);
         void update(){}
 };
 

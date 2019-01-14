@@ -11,4 +11,4 @@ PlayerModel::PlayerModel(int x, int y, int r):BallModel(x,y,r)
 
 void PlayerModel::update() {}
 
-std::vector<BallModel*>::iterator PlayerModel::checkCollision(std::vector<BallModel*> v) {}
+std::vector<BallModel*>::iterator PlayerModel::checkCollision(std::vector<BallModel*>* v) {}

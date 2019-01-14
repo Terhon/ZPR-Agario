@@ -8,7 +8,7 @@ class PlayerModel : public BallModel {
     public:
 
     PlayerModel(int x, int y, int r);
-    virtual std::vector<BallModel*>::iterator checkCollision(std::vector<BallModel*> v);
+    virtual std::vector<BallModel*>::iterator checkCollision(std::vector<BallModel*>* v);
     virtual void update();
 };
 

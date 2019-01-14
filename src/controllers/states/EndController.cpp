@@ -11,5 +11,5 @@ void EndController::handleEvents(sf::Event event)
         if(event.key.code == sf::Keyboard::R)
             dynamic_cast<EndModel*> (model)->resetGame();
         else if(event.key.code == sf::Keyboard::Escape)
-            exit(1);
+            dynamic_cast<EndModel*> (model)->exitGame();
 }
