@@ -31,8 +31,10 @@ public:
     int getAcceleration(){return acceleration;}
     void setAcceleration(int radius) {this->acceleration = acceleration;}
 
-    virtual void update();
+
+    virtual void update(){}
     int grow(int eatenRadius);
+    virtual std::vector<BallModel>::iterator checkCollision(std::vector<BallModel> v);
 };
 
 #endif //AGARIO_BALLMODEL_HPP
