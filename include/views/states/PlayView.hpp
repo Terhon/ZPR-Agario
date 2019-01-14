@@ -1,7 +1,7 @@
 #ifndef AGARIO_PLAYVIEW_HPP
 #define AGARIO_PLAYVIEW_HPP
 
-#include <StateView.hpp>
+#include <states/StateView.hpp>
 #include <iostream>
 
 class PlayView : public StateView {

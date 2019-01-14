@@ -1,4 +1,4 @@
-#include <EndController.hpp>
+#include <states/EndController.hpp>
 
 EndController::EndController(EndModel *m)
 {

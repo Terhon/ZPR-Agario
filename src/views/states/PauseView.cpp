@@ -1,4 +1,4 @@
-#include <PauseView.hpp>
+#include <states/PauseView.hpp>
 
 PauseView::PauseView() {
     bckgColor = sf::Color::Black;

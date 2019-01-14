@@ -1,4 +1,4 @@
-#include <PlayView.hpp>
+#include <states/PlayView.hpp>
 
 PlayView::PlayView() {
     bckgColor = sf::Color::Black;

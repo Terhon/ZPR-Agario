@@ -1,5 +1,5 @@
-#include <EndModel.hpp>
-#include <StartModel.hpp>
+#include <states/EndModel.hpp>
+#include <states/StartModel.hpp>
 
 EndModel::EndModel(App* a)
 {

@@ -1,5 +1,5 @@
-#include <PauseModel.hpp>
-#include <StartModel.hpp>
+#include <states/PauseModel.hpp>
+#include <states/StartModel.hpp>
 
 PauseModel::PauseModel(App* a)
 {

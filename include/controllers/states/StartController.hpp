@@ -1,9 +1,9 @@
 #ifndef STARTCONTROLLER_HPP
 #define STARTCONTROLLER_HPP
 
-#include <StartModel.hpp>
-#include <StateController.hpp>
-#include <StartView.hpp>
+#include <states/StartModel.hpp>
+#include <states/StateController.hpp>
+#include <states/StartView.hpp>
 
 class StartModel;
 

@@ -1,5 +1,5 @@
-#include <StartModel.hpp>
-#include <PlayModel.hpp>
+#include <states/StartModel.hpp>
+#include <states/PlayModel.hpp>
 
 StartModel::StartModel(App* a)
 {

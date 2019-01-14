@@ -1,4 +1,4 @@
-#include <StartController.hpp>
+#include <states/StartController.hpp>
 
 StartController::StartController(StartModel *m)
 {

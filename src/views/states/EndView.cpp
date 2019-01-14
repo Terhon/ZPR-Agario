@@ -1,4 +1,4 @@
-#include <EndView.hpp>
+#include <states/EndView.hpp>
 
 EndView::EndView() {
     loadBackground();

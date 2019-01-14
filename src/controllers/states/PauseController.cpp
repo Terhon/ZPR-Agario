@@ -1,4 +1,4 @@
-#include <PauseController.hpp>
+#include <states/PauseController.hpp>
 
 PauseController::PauseController(PauseModel *m)
 {

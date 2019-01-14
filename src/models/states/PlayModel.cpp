@@ -1,6 +1,6 @@
-#include <PlayModel.hpp>
-#include <PauseModel.hpp>
-#include <EndModel.hpp>
+#include <states/PlayModel.hpp>
+#include <states/PauseModel.hpp>
+#include <states/EndModel.hpp>
 
 PlayModel::PlayModel(App* a)
 {

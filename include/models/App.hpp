@@ -11,7 +11,7 @@ class StateModel;
 #include <AppController.hpp>
 #include <AppView.hpp>
 #include <SFML/Graphics.hpp>
-#include <StateModel.hpp>
+#include <states/StateModel.hpp>
 #include <stack>
 
 class App

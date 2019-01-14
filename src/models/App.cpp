@@ -1,5 +1,5 @@
 #include <App.hpp>
-#include <StartModel.hpp>
+#include <states/StartModel.hpp>
 
 App::App() 
 {

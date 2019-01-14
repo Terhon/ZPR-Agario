@@ -1,9 +1,9 @@
 #ifndef ENDMODEL_HPP
 #define ENDMODEL_HPP
 
-#include <StateModel.hpp>
-#include <EndView.hpp>
-#include <EndController.hpp>
+#include <states/StateModel.hpp>
+#include <states/EndView.hpp>
+#include <states/EndController.hpp>
 
 class EndModel : public StateModel 
 {

@@ -1,24 +1,23 @@
 #ifndef STARTVIEW_HPP
 #define STARTVIEW_HPP
 
-#include <StateView.hpp>
+#include <states/StateView.hpp>
 #include <iostream>
+#include <sstream>
+#include <string>
 
-class StartView : public StateView
-{
+
+class PauseView : public StateView {
     private:
-    sf::Image background;
-    sf::Texture texture;
-    sf::Sprite sprite;
+    sf::Color bckgColor;
     sf::Font font;
-    sf::Text title;
     sf::Text instruction;
+    sf::Text score;
     
     public:
     virtual void draw(sf::RenderWindow* window);
-    void loadBackground();
     void loadText();
-    StartView();
+    PauseView();
 };
 
 #endif

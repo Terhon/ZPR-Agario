@@ -1,9 +1,9 @@
 #ifndef AGARIO_PAUSECONTROLLER_HPP
 #define AGARIO_PAUSECONTROLLER_HPP
 
-#include <PauseModel.hpp>
-#include <StateController.hpp>
-#include <PauseView.hpp>
+#include <states/PauseModel.hpp>
+#include <states/StateController.hpp>
+#include <states/PauseView.hpp>
 
 class PauseModel;
 

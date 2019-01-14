@@ -1,9 +1,9 @@
 #ifndef AGARIO_PLAYMODEL_HPP
 #define AGARIO_PLAYMODEL_HPP
 
-#include <StateModel.hpp>
-#include <PlayView.hpp>
-#include <PlayController.hpp>
+#include <states/StateModel.hpp>
+#include <states/PlayView.hpp>
+#include <states/PlayController.hpp>
 
 class PlayModel : public StateModel
 {

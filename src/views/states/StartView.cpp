@@ -1,4 +1,4 @@
-#include <StartView.hpp>
+#include <states/StartView.hpp>
 
 StartView::StartView() {
     loadBackground();

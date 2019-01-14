@@ -1,9 +1,9 @@
 #ifndef AGARIO_ENDCONTROLLER_HPP
 #define AGARIO_ENDCONTROLLER_HPP
 
-#include <EndModel.hpp>
-#include <StateController.hpp>
-#include <EndView.hpp>
+#include <states/EndModel.hpp>
+#include <states/StateController.hpp>
+#include <states/EndView.hpp>
 
 class EndModel;
 

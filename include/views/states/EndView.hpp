@@ -1,7 +1,7 @@
 #ifndef STARTVIEW_HPP
 #define STARTVIEW_HPP
 
-#include <StateView.hpp>
+#include <states/StateView.hpp>
 #include <iostream>
 #include <sstream>
 #include <string>
