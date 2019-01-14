@@ -1,10 +1,8 @@
 #include <balls/BallView.hpp>
 
-BallView::BallView(BallModel * model) : model(model) {}
-
-BallView::BallView(BallModel * model, sf::Color * color)
-    : model(model), color(color) {
-        shape = new sf::CircleShape(0);
+BallView::BallView(BallModel* model, sf::Color* color)
+    : model(model), color(color){
+        shape = new sf::CircleShape();
 }
 
 void BallView::draw(sf::RenderWindow* window){
