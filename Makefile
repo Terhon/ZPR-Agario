@@ -177,6 +177,66 @@ src/controllers/AppController.cpp.s:
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/AppController.cpp.s
 .PHONY : src/controllers/AppController.cpp.s
 
+src/controllers/balls/BotController.o: src/controllers/balls/BotController.cpp.o
+
+.PHONY : src/controllers/balls/BotController.o
+
+# target to build an object file
+src/controllers/balls/BotController.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/BotController.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/balls/BotController.cpp.o
+.PHONY : src/controllers/balls/BotController.cpp.o
+
+src/controllers/balls/BotController.i: src/controllers/balls/BotController.cpp.i
+
+.PHONY : src/controllers/balls/BotController.i
+
+# target to preprocess a source file
+src/controllers/balls/BotController.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/BotController.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/balls/BotController.cpp.i
+.PHONY : src/controllers/balls/BotController.cpp.i
+
+src/controllers/balls/BotController.s: src/controllers/balls/BotController.cpp.s
+
+.PHONY : src/controllers/balls/BotController.s
+
+# target to generate assembly for a file
+src/controllers/balls/BotController.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/BotController.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/balls/BotController.cpp.s
+.PHONY : src/controllers/balls/BotController.cpp.s
+
+src/controllers/balls/PlayerController.o: src/controllers/balls/PlayerController.cpp.o
+
+.PHONY : src/controllers/balls/PlayerController.o
+
+# target to build an object file
+src/controllers/balls/PlayerController.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/PlayerController.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/balls/PlayerController.cpp.o
+.PHONY : src/controllers/balls/PlayerController.cpp.o
+
+src/controllers/balls/PlayerController.i: src/controllers/balls/PlayerController.cpp.i
+
+.PHONY : src/controllers/balls/PlayerController.i
+
+# target to preprocess a source file
+src/controllers/balls/PlayerController.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/PlayerController.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/balls/PlayerController.cpp.i
+.PHONY : src/controllers/balls/PlayerController.cpp.i
+
+src/controllers/balls/PlayerController.s: src/controllers/balls/PlayerController.cpp.s
+
+.PHONY : src/controllers/balls/PlayerController.s
+
+# target to generate assembly for a file
+src/controllers/balls/PlayerController.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/PlayerController.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/balls/PlayerController.cpp.s
+.PHONY : src/controllers/balls/PlayerController.cpp.s
+
 src/controllers/states/EndController.o: src/controllers/states/EndController.cpp.o
 
 .PHONY : src/controllers/states/EndController.o
@@ -354,6 +414,96 @@ src/models/App.cpp.s:
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/App.cpp.s
 .PHONY : src/models/App.cpp.s
 
+src/models/balls/BallModel.o: src/models/balls/BallModel.cpp.o
+
+.PHONY : src/models/balls/BallModel.o
+
+# target to build an object file
+src/models/balls/BallModel.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BallModel.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/BallModel.cpp.o
+.PHONY : src/models/balls/BallModel.cpp.o
+
+src/models/balls/BallModel.i: src/models/balls/BallModel.cpp.i
+
+.PHONY : src/models/balls/BallModel.i
+
+# target to preprocess a source file
+src/models/balls/BallModel.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BallModel.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/BallModel.cpp.i
+.PHONY : src/models/balls/BallModel.cpp.i
+
+src/models/balls/BallModel.s: src/models/balls/BallModel.cpp.s
+
+.PHONY : src/models/balls/BallModel.s
+
+# target to generate assembly for a file
+src/models/balls/BallModel.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BallModel.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/BallModel.cpp.s
+.PHONY : src/models/balls/BallModel.cpp.s
+
+src/models/balls/BotModel.o: src/models/balls/BotModel.cpp.o
+
+.PHONY : src/models/balls/BotModel.o
+
+# target to build an object file
+src/models/balls/BotModel.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BotModel.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/BotModel.cpp.o
+.PHONY : src/models/balls/BotModel.cpp.o
+
+src/models/balls/BotModel.i: src/models/balls/BotModel.cpp.i
+
+.PHONY : src/models/balls/BotModel.i
+
+# target to preprocess a source file
+src/models/balls/BotModel.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BotModel.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/BotModel.cpp.i
+.PHONY : src/models/balls/BotModel.cpp.i
+
+src/models/balls/BotModel.s: src/models/balls/BotModel.cpp.s
+
+.PHONY : src/models/balls/BotModel.s
+
+# target to generate assembly for a file
+src/models/balls/BotModel.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BotModel.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/BotModel.cpp.s
+.PHONY : src/models/balls/BotModel.cpp.s
+
+src/models/balls/PlayerModel.o: src/models/balls/PlayerModel.cpp.o
+
+.PHONY : src/models/balls/PlayerModel.o
+
+# target to build an object file
+src/models/balls/PlayerModel.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/PlayerModel.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/PlayerModel.cpp.o
+.PHONY : src/models/balls/PlayerModel.cpp.o
+
+src/models/balls/PlayerModel.i: src/models/balls/PlayerModel.cpp.i
+
+.PHONY : src/models/balls/PlayerModel.i
+
+# target to preprocess a source file
+src/models/balls/PlayerModel.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/PlayerModel.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/PlayerModel.cpp.i
+.PHONY : src/models/balls/PlayerModel.cpp.i
+
+src/models/balls/PlayerModel.s: src/models/balls/PlayerModel.cpp.s
+
+.PHONY : src/models/balls/PlayerModel.s
+
+# target to generate assembly for a file
+src/models/balls/PlayerModel.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/PlayerModel.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/PlayerModel.cpp.s
+.PHONY : src/models/balls/PlayerModel.cpp.s
+
 src/models/states/EndModel.o: src/models/states/EndModel.cpp.o
 
 .PHONY : src/models/states/EndModel.o
@@ -503,6 +653,96 @@ src/views/AppView.cpp.s:
 	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/AppView.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/AppView.cpp.s
 .PHONY : src/views/AppView.cpp.s
+
+src/views/balls/BallView.o: src/views/balls/BallView.cpp.o
+
+.PHONY : src/views/balls/BallView.o
+
+# target to build an object file
+src/views/balls/BallView.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BallView.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/BallView.cpp.o
+.PHONY : src/views/balls/BallView.cpp.o
+
+src/views/balls/BallView.i: src/views/balls/BallView.cpp.i
+
+.PHONY : src/views/balls/BallView.i
+
+# target to preprocess a source file
+src/views/balls/BallView.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BallView.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/BallView.cpp.i
+.PHONY : src/views/balls/BallView.cpp.i
+
+src/views/balls/BallView.s: src/views/balls/BallView.cpp.s
+
+.PHONY : src/views/balls/BallView.s
+
+# target to generate assembly for a file
+src/views/balls/BallView.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BallView.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/BallView.cpp.s
+.PHONY : src/views/balls/BallView.cpp.s
+
+src/views/balls/BotView.o: src/views/balls/BotView.cpp.o
+
+.PHONY : src/views/balls/BotView.o
+
+# target to build an object file
+src/views/balls/BotView.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BotView.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/BotView.cpp.o
+.PHONY : src/views/balls/BotView.cpp.o
+
+src/views/balls/BotView.i: src/views/balls/BotView.cpp.i
+
+.PHONY : src/views/balls/BotView.i
+
+# target to preprocess a source file
+src/views/balls/BotView.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BotView.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/BotView.cpp.i
+.PHONY : src/views/balls/BotView.cpp.i
+
+src/views/balls/BotView.s: src/views/balls/BotView.cpp.s
+
+.PHONY : src/views/balls/BotView.s
+
+# target to generate assembly for a file
+src/views/balls/BotView.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BotView.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/BotView.cpp.s
+.PHONY : src/views/balls/BotView.cpp.s
+
+src/views/balls/PlayerView.o: src/views/balls/PlayerView.cpp.o
+
+.PHONY : src/views/balls/PlayerView.o
+
+# target to build an object file
+src/views/balls/PlayerView.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/PlayerView.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/PlayerView.cpp.o
+.PHONY : src/views/balls/PlayerView.cpp.o
+
+src/views/balls/PlayerView.i: src/views/balls/PlayerView.cpp.i
+
+.PHONY : src/views/balls/PlayerView.i
+
+# target to preprocess a source file
+src/views/balls/PlayerView.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/PlayerView.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/PlayerView.cpp.i
+.PHONY : src/views/balls/PlayerView.cpp.i
+
+src/views/balls/PlayerView.s: src/views/balls/PlayerView.cpp.s
+
+.PHONY : src/views/balls/PlayerView.s
+
+# target to generate assembly for a file
+src/views/balls/PlayerView.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/PlayerView.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/PlayerView.cpp.s
+.PHONY : src/views/balls/PlayerView.cpp.s
 
 src/views/states/EndView.o: src/views/states/EndView.cpp.o
 
@@ -665,6 +905,12 @@ help:
 	@echo "... src/controllers/AppController.o"
 	@echo "... src/controllers/AppController.i"
 	@echo "... src/controllers/AppController.s"
+	@echo "... src/controllers/balls/BotController.o"
+	@echo "... src/controllers/balls/BotController.i"
+	@echo "... src/controllers/balls/BotController.s"
+	@echo "... src/controllers/balls/PlayerController.o"
+	@echo "... src/controllers/balls/PlayerController.i"
+	@echo "... src/controllers/balls/PlayerController.s"
 	@echo "... src/controllers/states/EndController.o"
 	@echo "... src/controllers/states/EndController.i"
 	@echo "... src/controllers/states/EndController.s"
@@ -683,6 +929,15 @@ help:
 	@echo "... src/models/App.o"
 	@echo "... src/models/App.i"
 	@echo "... src/models/App.s"
+	@echo "... src/models/balls/BallModel.o"
+	@echo "... src/models/balls/BallModel.i"
+	@echo "... src/models/balls/BallModel.s"
+	@echo "... src/models/balls/BotModel.o"
+	@echo "... src/models/balls/BotModel.i"
+	@echo "... src/models/balls/BotModel.s"
+	@echo "... src/models/balls/PlayerModel.o"
+	@echo "... src/models/balls/PlayerModel.i"
+	@echo "... src/models/balls/PlayerModel.s"
 	@echo "... src/models/states/EndModel.o"
 	@echo "... src/models/states/EndModel.i"
 	@echo "... src/models/states/EndModel.s"
@@ -698,6 +953,15 @@ help:
 	@echo "... src/views/AppView.o"
 	@echo "... src/views/AppView.i"
 	@echo "... src/views/AppView.s"
+	@echo "... src/views/balls/BallView.o"
+	@echo "... src/views/balls/BallView.i"
+	@echo "... src/views/balls/BallView.s"
+	@echo "... src/views/balls/BotView.o"
+	@echo "... src/views/balls/BotView.i"
+	@echo "... src/views/balls/BotView.s"
+	@echo "... src/views/balls/PlayerView.o"
+	@echo "... src/views/balls/PlayerView.i"
+	@echo "... src/views/balls/PlayerView.s"
 	@echo "... src/views/states/EndView.o"
 	@echo "... src/views/states/EndView.i"
 	@echo "... src/views/states/EndView.s"
