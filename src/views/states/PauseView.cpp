@@ -1,13 +1,13 @@
 #include <states/PauseView.hpp>
 
 PauseView::PauseView() {
-    bckgColor = sf::Color::Black;
     loadText();
 }
 
 void PauseView::draw(sf::RenderWindow* window)
 {
-    window->clear(bckgColor);
+    window->clear(sf::Color(221, 117, 161));
+    window->draw(score);
     window->draw(instruction);
 }
 
@@ -22,14 +22,14 @@ void PauseView::loadText(){
         score.setFont(font); 
         score.setString(s);
         score.setCharacterSize(35); // in pixels, not points!
-        score.setFillColor(sf::Color::Black);
+        score.setFillColor(sf::Color(56, 48, 55));
         score.setStyle(sf::Text::Bold);
         score.setPosition(100, 120);
 
         instruction.setFont(font); 
-        instruction.setString("Press P to resume,\nR to reset the game.\n\nEat balls smaller than you,\navoid those that can eat you.\nUse mouse to move.");
+        instruction.setString("Press P to resume,\nR to restart,\nEsc to end the game.\n\nEat balls smaller than you,\navoid those that can eat you.\nUse the mouse to move.");
         instruction.setCharacterSize(25); // in pixels, not points!
-        instruction.setFillColor(sf::Color::Red);
+        instruction.setFillColor(sf::Color(56, 48, 55));
     //    instruction.setStyle(sf::Text::Bold);
         instruction.setPosition(100, 240);
     }

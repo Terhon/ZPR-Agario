@@ -12,4 +12,6 @@ void PauseController::handleEvents(sf::Event event)
             dynamic_cast<PauseModel*> (model)->popPause();
         else if(event.key.code == sf::Keyboard::R)
             dynamic_cast<PauseModel*> (model)->resetGame();
+        else if(event.key.code == sf::Keyboard::Escape)
+            dynamic_cast<PauseModel*> (model)->endGame();
 }

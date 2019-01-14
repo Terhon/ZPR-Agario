@@ -35,7 +35,7 @@ void StartView::loadText(){
         title.setPosition(270, 100);
 
         instruction.setFont(font); 
-        instruction.setString("Eat balls smaller than you,\navoid those that can eat you.\nUse mouse to move.\n\nPress S to start\nIn game press P to pause");
+        instruction.setString("Eat balls smaller than you,\navoid those that can eat you.\nUse the mouse to move.\n\nPress S to start\nIn game press P to pause");
         instruction.setCharacterSize(40); // in pixels, not points!
         instruction.setFillColor(sf::Color::Black);
     //    instruction.setStyle(sf::Text::Bold);

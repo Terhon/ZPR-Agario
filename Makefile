@@ -177,6 +177,126 @@ src/controllers/AppController.cpp.s:
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/AppController.cpp.s
 .PHONY : src/controllers/AppController.cpp.s
 
+src/controllers/states/EndController.o: src/controllers/states/EndController.cpp.o
+
+.PHONY : src/controllers/states/EndController.o
+
+# target to build an object file
+src/controllers/states/EndController.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/EndController.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/EndController.cpp.o
+.PHONY : src/controllers/states/EndController.cpp.o
+
+src/controllers/states/EndController.i: src/controllers/states/EndController.cpp.i
+
+.PHONY : src/controllers/states/EndController.i
+
+# target to preprocess a source file
+src/controllers/states/EndController.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/EndController.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/EndController.cpp.i
+.PHONY : src/controllers/states/EndController.cpp.i
+
+src/controllers/states/EndController.s: src/controllers/states/EndController.cpp.s
+
+.PHONY : src/controllers/states/EndController.s
+
+# target to generate assembly for a file
+src/controllers/states/EndController.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/EndController.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/EndController.cpp.s
+.PHONY : src/controllers/states/EndController.cpp.s
+
+src/controllers/states/PauseController.o: src/controllers/states/PauseController.cpp.o
+
+.PHONY : src/controllers/states/PauseController.o
+
+# target to build an object file
+src/controllers/states/PauseController.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PauseController.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/PauseController.cpp.o
+.PHONY : src/controllers/states/PauseController.cpp.o
+
+src/controllers/states/PauseController.i: src/controllers/states/PauseController.cpp.i
+
+.PHONY : src/controllers/states/PauseController.i
+
+# target to preprocess a source file
+src/controllers/states/PauseController.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PauseController.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/PauseController.cpp.i
+.PHONY : src/controllers/states/PauseController.cpp.i
+
+src/controllers/states/PauseController.s: src/controllers/states/PauseController.cpp.s
+
+.PHONY : src/controllers/states/PauseController.s
+
+# target to generate assembly for a file
+src/controllers/states/PauseController.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PauseController.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/PauseController.cpp.s
+.PHONY : src/controllers/states/PauseController.cpp.s
+
+src/controllers/states/PlayController.o: src/controllers/states/PlayController.cpp.o
+
+.PHONY : src/controllers/states/PlayController.o
+
+# target to build an object file
+src/controllers/states/PlayController.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PlayController.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/PlayController.cpp.o
+.PHONY : src/controllers/states/PlayController.cpp.o
+
+src/controllers/states/PlayController.i: src/controllers/states/PlayController.cpp.i
+
+.PHONY : src/controllers/states/PlayController.i
+
+# target to preprocess a source file
+src/controllers/states/PlayController.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PlayController.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/PlayController.cpp.i
+.PHONY : src/controllers/states/PlayController.cpp.i
+
+src/controllers/states/PlayController.s: src/controllers/states/PlayController.cpp.s
+
+.PHONY : src/controllers/states/PlayController.s
+
+# target to generate assembly for a file
+src/controllers/states/PlayController.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PlayController.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/PlayController.cpp.s
+.PHONY : src/controllers/states/PlayController.cpp.s
+
+src/controllers/states/StartController.o: src/controllers/states/StartController.cpp.o
+
+.PHONY : src/controllers/states/StartController.o
+
+# target to build an object file
+src/controllers/states/StartController.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/StartController.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/StartController.cpp.o
+.PHONY : src/controllers/states/StartController.cpp.o
+
+src/controllers/states/StartController.i: src/controllers/states/StartController.cpp.i
+
+.PHONY : src/controllers/states/StartController.i
+
+# target to preprocess a source file
+src/controllers/states/StartController.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/StartController.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/StartController.cpp.i
+.PHONY : src/controllers/states/StartController.cpp.i
+
+src/controllers/states/StartController.s: src/controllers/states/StartController.cpp.s
+
+.PHONY : src/controllers/states/StartController.s
+
+# target to generate assembly for a file
+src/controllers/states/StartController.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/StartController.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/StartController.cpp.s
+.PHONY : src/controllers/states/StartController.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -234,65 +354,125 @@ src/models/App.cpp.s:
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/App.cpp.s
 .PHONY : src/models/App.cpp.s
 
-src/models/StartModel.o: src/models/StartModel.cpp.o
+src/models/states/EndModel.o: src/models/states/EndModel.cpp.o
 
-.PHONY : src/models/StartModel.o
-
-# target to build an object file
-src/models/StartModel.cpp.o:
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/StartModel.cpp.o
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/StartModel.cpp.o
-.PHONY : src/models/StartModel.cpp.o
-
-src/models/StartModel.i: src/models/StartModel.cpp.i
-
-.PHONY : src/models/StartModel.i
-
-# target to preprocess a source file
-src/models/StartModel.cpp.i:
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/StartModel.cpp.i
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/StartModel.cpp.i
-.PHONY : src/models/StartModel.cpp.i
-
-src/models/StartModel.s: src/models/StartModel.cpp.s
-
-.PHONY : src/models/StartModel.s
-
-# target to generate assembly for a file
-src/models/StartModel.cpp.s:
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/StartModel.cpp.s
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/StartModel.cpp.s
-.PHONY : src/models/StartModel.cpp.s
-
-src/models/StateModel.o: src/models/StateModel.cpp.o
-
-.PHONY : src/models/StateModel.o
+.PHONY : src/models/states/EndModel.o
 
 # target to build an object file
-src/models/StateModel.cpp.o:
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/StateModel.cpp.o
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/StateModel.cpp.o
-.PHONY : src/models/StateModel.cpp.o
+src/models/states/EndModel.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/EndModel.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/EndModel.cpp.o
+.PHONY : src/models/states/EndModel.cpp.o
 
-src/models/StateModel.i: src/models/StateModel.cpp.i
+src/models/states/EndModel.i: src/models/states/EndModel.cpp.i
 
-.PHONY : src/models/StateModel.i
+.PHONY : src/models/states/EndModel.i
 
 # target to preprocess a source file
-src/models/StateModel.cpp.i:
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/StateModel.cpp.i
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/StateModel.cpp.i
-.PHONY : src/models/StateModel.cpp.i
+src/models/states/EndModel.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/EndModel.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/EndModel.cpp.i
+.PHONY : src/models/states/EndModel.cpp.i
 
-src/models/StateModel.s: src/models/StateModel.cpp.s
+src/models/states/EndModel.s: src/models/states/EndModel.cpp.s
 
-.PHONY : src/models/StateModel.s
+.PHONY : src/models/states/EndModel.s
 
 # target to generate assembly for a file
-src/models/StateModel.cpp.s:
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/StateModel.cpp.s
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/StateModel.cpp.s
-.PHONY : src/models/StateModel.cpp.s
+src/models/states/EndModel.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/EndModel.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/EndModel.cpp.s
+.PHONY : src/models/states/EndModel.cpp.s
+
+src/models/states/PauseModel.o: src/models/states/PauseModel.cpp.o
+
+.PHONY : src/models/states/PauseModel.o
+
+# target to build an object file
+src/models/states/PauseModel.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PauseModel.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/PauseModel.cpp.o
+.PHONY : src/models/states/PauseModel.cpp.o
+
+src/models/states/PauseModel.i: src/models/states/PauseModel.cpp.i
+
+.PHONY : src/models/states/PauseModel.i
+
+# target to preprocess a source file
+src/models/states/PauseModel.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PauseModel.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/PauseModel.cpp.i
+.PHONY : src/models/states/PauseModel.cpp.i
+
+src/models/states/PauseModel.s: src/models/states/PauseModel.cpp.s
+
+.PHONY : src/models/states/PauseModel.s
+
+# target to generate assembly for a file
+src/models/states/PauseModel.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PauseModel.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/PauseModel.cpp.s
+.PHONY : src/models/states/PauseModel.cpp.s
+
+src/models/states/PlayModel.o: src/models/states/PlayModel.cpp.o
+
+.PHONY : src/models/states/PlayModel.o
+
+# target to build an object file
+src/models/states/PlayModel.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PlayModel.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/PlayModel.cpp.o
+.PHONY : src/models/states/PlayModel.cpp.o
+
+src/models/states/PlayModel.i: src/models/states/PlayModel.cpp.i
+
+.PHONY : src/models/states/PlayModel.i
+
+# target to preprocess a source file
+src/models/states/PlayModel.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PlayModel.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/PlayModel.cpp.i
+.PHONY : src/models/states/PlayModel.cpp.i
+
+src/models/states/PlayModel.s: src/models/states/PlayModel.cpp.s
+
+.PHONY : src/models/states/PlayModel.s
+
+# target to generate assembly for a file
+src/models/states/PlayModel.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PlayModel.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/PlayModel.cpp.s
+.PHONY : src/models/states/PlayModel.cpp.s
+
+src/models/states/StartModel.o: src/models/states/StartModel.cpp.o
+
+.PHONY : src/models/states/StartModel.o
+
+# target to build an object file
+src/models/states/StartModel.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/StartModel.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/StartModel.cpp.o
+.PHONY : src/models/states/StartModel.cpp.o
+
+src/models/states/StartModel.i: src/models/states/StartModel.cpp.i
+
+.PHONY : src/models/states/StartModel.i
+
+# target to preprocess a source file
+src/models/states/StartModel.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/StartModel.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/StartModel.cpp.i
+.PHONY : src/models/states/StartModel.cpp.i
+
+src/models/states/StartModel.s: src/models/states/StartModel.cpp.s
+
+.PHONY : src/models/states/StartModel.s
+
+# target to generate assembly for a file
+src/models/states/StartModel.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/StartModel.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/StartModel.cpp.s
+.PHONY : src/models/states/StartModel.cpp.s
 
 src/views/AppView.o: src/views/AppView.cpp.o
 
@@ -324,65 +504,125 @@ src/views/AppView.cpp.s:
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/AppView.cpp.s
 .PHONY : src/views/AppView.cpp.s
 
-src/views/EndView.o: src/views/EndView.cpp.o
+src/views/states/EndView.o: src/views/states/EndView.cpp.o
 
-.PHONY : src/views/EndView.o
-
-# target to build an object file
-src/views/EndView.cpp.o:
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/EndView.cpp.o
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/EndView.cpp.o
-.PHONY : src/views/EndView.cpp.o
-
-src/views/EndView.i: src/views/EndView.cpp.i
-
-.PHONY : src/views/EndView.i
-
-# target to preprocess a source file
-src/views/EndView.cpp.i:
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/EndView.cpp.i
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/EndView.cpp.i
-.PHONY : src/views/EndView.cpp.i
-
-src/views/EndView.s: src/views/EndView.cpp.s
-
-.PHONY : src/views/EndView.s
-
-# target to generate assembly for a file
-src/views/EndView.cpp.s:
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/EndView.cpp.s
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/EndView.cpp.s
-.PHONY : src/views/EndView.cpp.s
-
-src/views/StartView.o: src/views/StartView.cpp.o
-
-.PHONY : src/views/StartView.o
+.PHONY : src/views/states/EndView.o
 
 # target to build an object file
-src/views/StartView.cpp.o:
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/StartView.cpp.o
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/StartView.cpp.o
-.PHONY : src/views/StartView.cpp.o
+src/views/states/EndView.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/EndView.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/EndView.cpp.o
+.PHONY : src/views/states/EndView.cpp.o
 
-src/views/StartView.i: src/views/StartView.cpp.i
+src/views/states/EndView.i: src/views/states/EndView.cpp.i
 
-.PHONY : src/views/StartView.i
+.PHONY : src/views/states/EndView.i
 
 # target to preprocess a source file
-src/views/StartView.cpp.i:
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/StartView.cpp.i
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/StartView.cpp.i
-.PHONY : src/views/StartView.cpp.i
+src/views/states/EndView.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/EndView.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/EndView.cpp.i
+.PHONY : src/views/states/EndView.cpp.i
 
-src/views/StartView.s: src/views/StartView.cpp.s
+src/views/states/EndView.s: src/views/states/EndView.cpp.s
 
-.PHONY : src/views/StartView.s
+.PHONY : src/views/states/EndView.s
 
 # target to generate assembly for a file
-src/views/StartView.cpp.s:
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/StartView.cpp.s
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/StartView.cpp.s
-.PHONY : src/views/StartView.cpp.s
+src/views/states/EndView.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/EndView.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/EndView.cpp.s
+.PHONY : src/views/states/EndView.cpp.s
+
+src/views/states/PauseView.o: src/views/states/PauseView.cpp.o
+
+.PHONY : src/views/states/PauseView.o
+
+# target to build an object file
+src/views/states/PauseView.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PauseView.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/PauseView.cpp.o
+.PHONY : src/views/states/PauseView.cpp.o
+
+src/views/states/PauseView.i: src/views/states/PauseView.cpp.i
+
+.PHONY : src/views/states/PauseView.i
+
+# target to preprocess a source file
+src/views/states/PauseView.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PauseView.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/PauseView.cpp.i
+.PHONY : src/views/states/PauseView.cpp.i
+
+src/views/states/PauseView.s: src/views/states/PauseView.cpp.s
+
+.PHONY : src/views/states/PauseView.s
+
+# target to generate assembly for a file
+src/views/states/PauseView.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PauseView.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/PauseView.cpp.s
+.PHONY : src/views/states/PauseView.cpp.s
+
+src/views/states/PlayView.o: src/views/states/PlayView.cpp.o
+
+.PHONY : src/views/states/PlayView.o
+
+# target to build an object file
+src/views/states/PlayView.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PlayView.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/PlayView.cpp.o
+.PHONY : src/views/states/PlayView.cpp.o
+
+src/views/states/PlayView.i: src/views/states/PlayView.cpp.i
+
+.PHONY : src/views/states/PlayView.i
+
+# target to preprocess a source file
+src/views/states/PlayView.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PlayView.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/PlayView.cpp.i
+.PHONY : src/views/states/PlayView.cpp.i
+
+src/views/states/PlayView.s: src/views/states/PlayView.cpp.s
+
+.PHONY : src/views/states/PlayView.s
+
+# target to generate assembly for a file
+src/views/states/PlayView.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PlayView.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/PlayView.cpp.s
+.PHONY : src/views/states/PlayView.cpp.s
+
+src/views/states/StartView.o: src/views/states/StartView.cpp.o
+
+.PHONY : src/views/states/StartView.o
+
+# target to build an object file
+src/views/states/StartView.cpp.o:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/StartView.cpp.o
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/StartView.cpp.o
+.PHONY : src/views/states/StartView.cpp.o
+
+src/views/states/StartView.i: src/views/states/StartView.cpp.i
+
+.PHONY : src/views/states/StartView.i
+
+# target to preprocess a source file
+src/views/states/StartView.cpp.i:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/StartView.cpp.i
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/StartView.cpp.i
+.PHONY : src/views/states/StartView.cpp.i
+
+src/views/states/StartView.s: src/views/states/StartView.cpp.s
+
+.PHONY : src/views/states/StartView.s
+
+# target to generate assembly for a file
+src/views/states/StartView.cpp.s:
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/StartView.cpp.s
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/StartView.cpp.s
+.PHONY : src/views/states/StartView.cpp.s
 
 tests/models/AppTest.o: tests/models/AppTest.cpp.o
 
@@ -425,27 +665,51 @@ help:
 	@echo "... src/controllers/AppController.o"
 	@echo "... src/controllers/AppController.i"
 	@echo "... src/controllers/AppController.s"
+	@echo "... src/controllers/states/EndController.o"
+	@echo "... src/controllers/states/EndController.i"
+	@echo "... src/controllers/states/EndController.s"
+	@echo "... src/controllers/states/PauseController.o"
+	@echo "... src/controllers/states/PauseController.i"
+	@echo "... src/controllers/states/PauseController.s"
+	@echo "... src/controllers/states/PlayController.o"
+	@echo "... src/controllers/states/PlayController.i"
+	@echo "... src/controllers/states/PlayController.s"
+	@echo "... src/controllers/states/StartController.o"
+	@echo "... src/controllers/states/StartController.i"
+	@echo "... src/controllers/states/StartController.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/models/App.o"
 	@echo "... src/models/App.i"
 	@echo "... src/models/App.s"
-	@echo "... src/models/StartModel.o"
-	@echo "... src/models/StartModel.i"
-	@echo "... src/models/StartModel.s"
-	@echo "... src/models/StateModel.o"
-	@echo "... src/models/StateModel.i"
-	@echo "... src/models/StateModel.s"
+	@echo "... src/models/states/EndModel.o"
+	@echo "... src/models/states/EndModel.i"
+	@echo "... src/models/states/EndModel.s"
+	@echo "... src/models/states/PauseModel.o"
+	@echo "... src/models/states/PauseModel.i"
+	@echo "... src/models/states/PauseModel.s"
+	@echo "... src/models/states/PlayModel.o"
+	@echo "... src/models/states/PlayModel.i"
+	@echo "... src/models/states/PlayModel.s"
+	@echo "... src/models/states/StartModel.o"
+	@echo "... src/models/states/StartModel.i"
+	@echo "... src/models/states/StartModel.s"
 	@echo "... src/views/AppView.o"
 	@echo "... src/views/AppView.i"
 	@echo "... src/views/AppView.s"
-	@echo "... src/views/EndView.o"
-	@echo "... src/views/EndView.i"
-	@echo "... src/views/EndView.s"
-	@echo "... src/views/StartView.o"
-	@echo "... src/views/StartView.i"
-	@echo "... src/views/StartView.s"
+	@echo "... src/views/states/EndView.o"
+	@echo "... src/views/states/EndView.i"
+	@echo "... src/views/states/EndView.s"
+	@echo "... src/views/states/PauseView.o"
+	@echo "... src/views/states/PauseView.i"
+	@echo "... src/views/states/PauseView.s"
+	@echo "... src/views/states/PlayView.o"
+	@echo "... src/views/states/PlayView.i"
+	@echo "... src/views/states/PlayView.s"
+	@echo "... src/views/states/StartView.o"
+	@echo "... src/views/states/StartView.i"
+	@echo "... src/views/states/StartView.s"
 	@echo "... tests/models/AppTest.o"
 	@echo "... tests/models/AppTest.i"
 	@echo "... tests/models/AppTest.s"

@@ -9,7 +9,7 @@
 
 class PauseView : public StateView {
     private:
-    sf::Color bckgColor;
+    sf::Color * bckgColor;
     sf::Font font;
     sf::Text instruction;
     sf::Text score;

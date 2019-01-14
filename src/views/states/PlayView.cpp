@@ -7,7 +7,7 @@ PlayView::PlayView() {
 
 void PlayView::draw(sf::RenderWindow* window)
 {
-    window->clear(bckgColor);
+    window->clear(sf::Color(160, 141, 158));
     window->draw(instruction);
 }
 
@@ -18,7 +18,7 @@ void PlayView::loadText(){
         instruction.setFont(font);
         instruction.setString("Press P to pause");
         instruction.setCharacterSize(10); // in pixels, not points!
-        instruction.setFillColor(sf::Color::Red);
+        instruction.setFillColor(sf::Color::Black);
         instruction.setStyle(sf::Text::Bold);
         instruction.setPosition(5, 5);
     }

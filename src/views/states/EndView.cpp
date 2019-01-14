@@ -34,14 +34,14 @@ void EndView::loadText(){
         score.setFont(font); 
         score.setString(s);
         score.setCharacterSize(45); // in pixels, not points!
-        score.setFillColor(sf::Color::Black);
+        score.setFillColor(sf::Color(56, 48, 55));
         score.setStyle(sf::Text::Bold);
         score.setPosition(270, 120);
 
         instruction.setFont(font); 
         instruction.setString("Press R to play again,\nEsc to close\n");
         instruction.setCharacterSize(40); // in pixels, not points!
-        instruction.setFillColor(sf::Color::Black);
+        instruction.setFillColor(sf::Color(56, 48, 55));
     //    instruction.setStyle(sf::Text::Bold);
         instruction.setPosition(100, 240);
     }
