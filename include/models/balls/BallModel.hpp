@@ -3,6 +3,7 @@
 
 #include <balls/BallController.hpp>
 #include <balls/BallView.hpp>
+#include <cmath>
 
 class BallController;
 class BallView;
@@ -18,8 +19,20 @@ protected:
     double acceleration;
 
 public:
-    virtual void update();
+
+    int getX() {return x;}
+    void setX(int x){this->x = x;}
+    int getY() {return y;}
+    void setY(int y){this->y = y;}
     int getRadius(){return radius;}
+    void setRadius(int radius) {this->radius = radius;}
+    int getVelocity(){return velocity;}
+    void setVelocity(int radius) {this->velocity = velocity;}
+    int getAcceleration(){return acceleration;}
+    void setAcceleration(int radius) {this->acceleration = acceleration;}
+
+    virtual void update();
+    int grow(int eatenRadius);
 };
 
 #endif //AGARIO_BALLMODEL_HPP
