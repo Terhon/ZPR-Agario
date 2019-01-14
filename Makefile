@@ -56,16 +56,16 @@ CMAKE_BINARY_DIR = /home/gabe/zpr/proj/ZPR-Agario
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : edit_cache/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target test
 test:
@@ -78,16 +78,16 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : rebuild_cache/fast
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -122,17 +122,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named BallModelTest
+# Target rules for targets named AppTest
 
 # Build rule for target.
-BallModelTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 BallModelTest
-.PHONY : BallModelTest
+AppTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 AppTest
+.PHONY : AppTest
 
 # fast build rule for target.
-BallModelTest/fast:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/build
-.PHONY : BallModelTest/fast
+AppTest/fast:
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/build
+.PHONY : AppTest/fast
 
 #=============================================================================
 # Target rules for targets named Agario
@@ -148,17 +148,30 @@ Agario/fast:
 .PHONY : Agario/fast
 
 #=============================================================================
-# Target rules for targets named AppTest
+# Target rules for targets named PlayerModelTest
 
 # Build rule for target.
-AppTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 AppTest
-.PHONY : AppTest
+PlayerModelTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PlayerModelTest
+.PHONY : PlayerModelTest
 
 # fast build rule for target.
-AppTest/fast:
-	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/build
-.PHONY : AppTest/fast
+PlayerModelTest/fast:
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/build
+.PHONY : PlayerModelTest/fast
+
+#=============================================================================
+# Target rules for targets named ObstacleModelTest
+
+# Build rule for target.
+ObstacleModelTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ObstacleModelTest
+.PHONY : ObstacleModelTest
+
+# fast build rule for target.
+ObstacleModelTest/fast:
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/build
+.PHONY : ObstacleModelTest/fast
 
 src/controllers/AppController.o: src/controllers/AppController.cpp.o
 
@@ -166,9 +179,10 @@ src/controllers/AppController.o: src/controllers/AppController.cpp.o
 
 # target to build an object file
 src/controllers/AppController.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/AppController.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/AppController.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/AppController.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/AppController.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/AppController.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/AppController.cpp.o
 .PHONY : src/controllers/AppController.cpp.o
 
 src/controllers/AppController.i: src/controllers/AppController.cpp.i
@@ -177,9 +191,10 @@ src/controllers/AppController.i: src/controllers/AppController.cpp.i
 
 # target to preprocess a source file
 src/controllers/AppController.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/AppController.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/AppController.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/AppController.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/AppController.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/AppController.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/AppController.cpp.i
 .PHONY : src/controllers/AppController.cpp.i
 
 src/controllers/AppController.s: src/controllers/AppController.cpp.s
@@ -188,9 +203,10 @@ src/controllers/AppController.s: src/controllers/AppController.cpp.s
 
 # target to generate assembly for a file
 src/controllers/AppController.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/AppController.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/AppController.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/AppController.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/AppController.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/AppController.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/AppController.cpp.s
 .PHONY : src/controllers/AppController.cpp.s
 
 src/controllers/balls/BotController.o: src/controllers/balls/BotController.cpp.o
@@ -199,9 +215,10 @@ src/controllers/balls/BotController.o: src/controllers/balls/BotController.cpp.o
 
 # target to build an object file
 src/controllers/balls/BotController.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/balls/BotController.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/BotController.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/balls/BotController.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/BotController.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/balls/BotController.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/balls/BotController.cpp.o
 .PHONY : src/controllers/balls/BotController.cpp.o
 
 src/controllers/balls/BotController.i: src/controllers/balls/BotController.cpp.i
@@ -210,9 +227,10 @@ src/controllers/balls/BotController.i: src/controllers/balls/BotController.cpp.i
 
 # target to preprocess a source file
 src/controllers/balls/BotController.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/balls/BotController.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/BotController.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/balls/BotController.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/BotController.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/balls/BotController.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/balls/BotController.cpp.i
 .PHONY : src/controllers/balls/BotController.cpp.i
 
 src/controllers/balls/BotController.s: src/controllers/balls/BotController.cpp.s
@@ -221,9 +239,10 @@ src/controllers/balls/BotController.s: src/controllers/balls/BotController.cpp.s
 
 # target to generate assembly for a file
 src/controllers/balls/BotController.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/balls/BotController.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/BotController.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/balls/BotController.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/BotController.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/balls/BotController.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/balls/BotController.cpp.s
 .PHONY : src/controllers/balls/BotController.cpp.s
 
 src/controllers/balls/PlayerController.o: src/controllers/balls/PlayerController.cpp.o
@@ -232,9 +251,10 @@ src/controllers/balls/PlayerController.o: src/controllers/balls/PlayerController
 
 # target to build an object file
 src/controllers/balls/PlayerController.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/balls/PlayerController.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/PlayerController.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/balls/PlayerController.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/PlayerController.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/balls/PlayerController.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/balls/PlayerController.cpp.o
 .PHONY : src/controllers/balls/PlayerController.cpp.o
 
 src/controllers/balls/PlayerController.i: src/controllers/balls/PlayerController.cpp.i
@@ -243,9 +263,10 @@ src/controllers/balls/PlayerController.i: src/controllers/balls/PlayerController
 
 # target to preprocess a source file
 src/controllers/balls/PlayerController.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/balls/PlayerController.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/PlayerController.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/balls/PlayerController.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/PlayerController.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/balls/PlayerController.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/balls/PlayerController.cpp.i
 .PHONY : src/controllers/balls/PlayerController.cpp.i
 
 src/controllers/balls/PlayerController.s: src/controllers/balls/PlayerController.cpp.s
@@ -254,9 +275,10 @@ src/controllers/balls/PlayerController.s: src/controllers/balls/PlayerController
 
 # target to generate assembly for a file
 src/controllers/balls/PlayerController.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/balls/PlayerController.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/PlayerController.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/balls/PlayerController.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/balls/PlayerController.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/balls/PlayerController.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/balls/PlayerController.cpp.s
 .PHONY : src/controllers/balls/PlayerController.cpp.s
 
 src/controllers/states/EndController.o: src/controllers/states/EndController.cpp.o
@@ -265,9 +287,10 @@ src/controllers/states/EndController.o: src/controllers/states/EndController.cpp
 
 # target to build an object file
 src/controllers/states/EndController.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/states/EndController.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/EndController.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/EndController.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/EndController.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/states/EndController.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/states/EndController.cpp.o
 .PHONY : src/controllers/states/EndController.cpp.o
 
 src/controllers/states/EndController.i: src/controllers/states/EndController.cpp.i
@@ -276,9 +299,10 @@ src/controllers/states/EndController.i: src/controllers/states/EndController.cpp
 
 # target to preprocess a source file
 src/controllers/states/EndController.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/states/EndController.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/EndController.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/EndController.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/EndController.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/states/EndController.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/states/EndController.cpp.i
 .PHONY : src/controllers/states/EndController.cpp.i
 
 src/controllers/states/EndController.s: src/controllers/states/EndController.cpp.s
@@ -287,9 +311,10 @@ src/controllers/states/EndController.s: src/controllers/states/EndController.cpp
 
 # target to generate assembly for a file
 src/controllers/states/EndController.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/states/EndController.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/EndController.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/EndController.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/EndController.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/states/EndController.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/states/EndController.cpp.s
 .PHONY : src/controllers/states/EndController.cpp.s
 
 src/controllers/states/PauseController.o: src/controllers/states/PauseController.cpp.o
@@ -298,9 +323,10 @@ src/controllers/states/PauseController.o: src/controllers/states/PauseController
 
 # target to build an object file
 src/controllers/states/PauseController.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/states/PauseController.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PauseController.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/PauseController.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PauseController.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/states/PauseController.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/states/PauseController.cpp.o
 .PHONY : src/controllers/states/PauseController.cpp.o
 
 src/controllers/states/PauseController.i: src/controllers/states/PauseController.cpp.i
@@ -309,9 +335,10 @@ src/controllers/states/PauseController.i: src/controllers/states/PauseController
 
 # target to preprocess a source file
 src/controllers/states/PauseController.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/states/PauseController.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PauseController.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/PauseController.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PauseController.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/states/PauseController.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/states/PauseController.cpp.i
 .PHONY : src/controllers/states/PauseController.cpp.i
 
 src/controllers/states/PauseController.s: src/controllers/states/PauseController.cpp.s
@@ -320,9 +347,10 @@ src/controllers/states/PauseController.s: src/controllers/states/PauseController
 
 # target to generate assembly for a file
 src/controllers/states/PauseController.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/states/PauseController.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PauseController.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/PauseController.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PauseController.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/states/PauseController.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/states/PauseController.cpp.s
 .PHONY : src/controllers/states/PauseController.cpp.s
 
 src/controllers/states/PlayController.o: src/controllers/states/PlayController.cpp.o
@@ -331,9 +359,10 @@ src/controllers/states/PlayController.o: src/controllers/states/PlayController.c
 
 # target to build an object file
 src/controllers/states/PlayController.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/states/PlayController.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PlayController.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/PlayController.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PlayController.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/states/PlayController.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/states/PlayController.cpp.o
 .PHONY : src/controllers/states/PlayController.cpp.o
 
 src/controllers/states/PlayController.i: src/controllers/states/PlayController.cpp.i
@@ -342,9 +371,10 @@ src/controllers/states/PlayController.i: src/controllers/states/PlayController.c
 
 # target to preprocess a source file
 src/controllers/states/PlayController.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/states/PlayController.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PlayController.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/PlayController.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PlayController.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/states/PlayController.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/states/PlayController.cpp.i
 .PHONY : src/controllers/states/PlayController.cpp.i
 
 src/controllers/states/PlayController.s: src/controllers/states/PlayController.cpp.s
@@ -353,9 +383,10 @@ src/controllers/states/PlayController.s: src/controllers/states/PlayController.c
 
 # target to generate assembly for a file
 src/controllers/states/PlayController.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/states/PlayController.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PlayController.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/PlayController.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/PlayController.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/states/PlayController.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/states/PlayController.cpp.s
 .PHONY : src/controllers/states/PlayController.cpp.s
 
 src/controllers/states/StartController.o: src/controllers/states/StartController.cpp.o
@@ -364,9 +395,10 @@ src/controllers/states/StartController.o: src/controllers/states/StartController
 
 # target to build an object file
 src/controllers/states/StartController.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/states/StartController.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/StartController.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/StartController.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/StartController.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/states/StartController.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/states/StartController.cpp.o
 .PHONY : src/controllers/states/StartController.cpp.o
 
 src/controllers/states/StartController.i: src/controllers/states/StartController.cpp.i
@@ -375,9 +407,10 @@ src/controllers/states/StartController.i: src/controllers/states/StartController
 
 # target to preprocess a source file
 src/controllers/states/StartController.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/states/StartController.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/StartController.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/StartController.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/StartController.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/states/StartController.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/states/StartController.cpp.i
 .PHONY : src/controllers/states/StartController.cpp.i
 
 src/controllers/states/StartController.s: src/controllers/states/StartController.cpp.s
@@ -386,9 +419,10 @@ src/controllers/states/StartController.s: src/controllers/states/StartController
 
 # target to generate assembly for a file
 src/controllers/states/StartController.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/controllers/states/StartController.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/StartController.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/controllers/states/StartController.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/controllers/states/StartController.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/controllers/states/StartController.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/controllers/states/StartController.cpp.s
 .PHONY : src/controllers/states/StartController.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -424,9 +458,10 @@ src/models/App.o: src/models/App.cpp.o
 
 # target to build an object file
 src/models/App.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/App.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/App.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/App.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/App.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/App.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/App.cpp.o
 .PHONY : src/models/App.cpp.o
 
 src/models/App.i: src/models/App.cpp.i
@@ -435,9 +470,10 @@ src/models/App.i: src/models/App.cpp.i
 
 # target to preprocess a source file
 src/models/App.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/App.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/App.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/App.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/App.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/App.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/App.cpp.i
 .PHONY : src/models/App.cpp.i
 
 src/models/App.s: src/models/App.cpp.s
@@ -446,9 +482,10 @@ src/models/App.s: src/models/App.cpp.s
 
 # target to generate assembly for a file
 src/models/App.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/App.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/App.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/App.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/App.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/App.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/App.cpp.s
 .PHONY : src/models/App.cpp.s
 
 src/models/balls/BallModel.o: src/models/balls/BallModel.cpp.o
@@ -457,9 +494,10 @@ src/models/balls/BallModel.o: src/models/balls/BallModel.cpp.o
 
 # target to build an object file
 src/models/balls/BallModel.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/balls/BallModel.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BallModel.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/BallModel.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BallModel.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/balls/BallModel.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/balls/BallModel.cpp.o
 .PHONY : src/models/balls/BallModel.cpp.o
 
 src/models/balls/BallModel.i: src/models/balls/BallModel.cpp.i
@@ -468,9 +506,10 @@ src/models/balls/BallModel.i: src/models/balls/BallModel.cpp.i
 
 # target to preprocess a source file
 src/models/balls/BallModel.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/balls/BallModel.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BallModel.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/BallModel.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BallModel.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/balls/BallModel.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/balls/BallModel.cpp.i
 .PHONY : src/models/balls/BallModel.cpp.i
 
 src/models/balls/BallModel.s: src/models/balls/BallModel.cpp.s
@@ -479,9 +518,10 @@ src/models/balls/BallModel.s: src/models/balls/BallModel.cpp.s
 
 # target to generate assembly for a file
 src/models/balls/BallModel.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/balls/BallModel.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BallModel.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/BallModel.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BallModel.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/balls/BallModel.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/balls/BallModel.cpp.s
 .PHONY : src/models/balls/BallModel.cpp.s
 
 src/models/balls/BotModel.o: src/models/balls/BotModel.cpp.o
@@ -490,9 +530,10 @@ src/models/balls/BotModel.o: src/models/balls/BotModel.cpp.o
 
 # target to build an object file
 src/models/balls/BotModel.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/balls/BotModel.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BotModel.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/BotModel.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BotModel.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/balls/BotModel.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/balls/BotModel.cpp.o
 .PHONY : src/models/balls/BotModel.cpp.o
 
 src/models/balls/BotModel.i: src/models/balls/BotModel.cpp.i
@@ -501,9 +542,10 @@ src/models/balls/BotModel.i: src/models/balls/BotModel.cpp.i
 
 # target to preprocess a source file
 src/models/balls/BotModel.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/balls/BotModel.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BotModel.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/BotModel.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BotModel.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/balls/BotModel.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/balls/BotModel.cpp.i
 .PHONY : src/models/balls/BotModel.cpp.i
 
 src/models/balls/BotModel.s: src/models/balls/BotModel.cpp.s
@@ -512,9 +554,10 @@ src/models/balls/BotModel.s: src/models/balls/BotModel.cpp.s
 
 # target to generate assembly for a file
 src/models/balls/BotModel.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/balls/BotModel.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BotModel.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/BotModel.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/BotModel.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/balls/BotModel.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/balls/BotModel.cpp.s
 .PHONY : src/models/balls/BotModel.cpp.s
 
 src/models/balls/ObstacleModel.o: src/models/balls/ObstacleModel.cpp.o
@@ -523,9 +566,10 @@ src/models/balls/ObstacleModel.o: src/models/balls/ObstacleModel.cpp.o
 
 # target to build an object file
 src/models/balls/ObstacleModel.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/balls/ObstacleModel.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/ObstacleModel.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/ObstacleModel.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/ObstacleModel.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/balls/ObstacleModel.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/balls/ObstacleModel.cpp.o
 .PHONY : src/models/balls/ObstacleModel.cpp.o
 
 src/models/balls/ObstacleModel.i: src/models/balls/ObstacleModel.cpp.i
@@ -534,9 +578,10 @@ src/models/balls/ObstacleModel.i: src/models/balls/ObstacleModel.cpp.i
 
 # target to preprocess a source file
 src/models/balls/ObstacleModel.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/balls/ObstacleModel.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/ObstacleModel.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/ObstacleModel.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/ObstacleModel.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/balls/ObstacleModel.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/balls/ObstacleModel.cpp.i
 .PHONY : src/models/balls/ObstacleModel.cpp.i
 
 src/models/balls/ObstacleModel.s: src/models/balls/ObstacleModel.cpp.s
@@ -545,9 +590,10 @@ src/models/balls/ObstacleModel.s: src/models/balls/ObstacleModel.cpp.s
 
 # target to generate assembly for a file
 src/models/balls/ObstacleModel.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/balls/ObstacleModel.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/ObstacleModel.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/ObstacleModel.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/ObstacleModel.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/balls/ObstacleModel.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/balls/ObstacleModel.cpp.s
 .PHONY : src/models/balls/ObstacleModel.cpp.s
 
 src/models/balls/PlayerModel.o: src/models/balls/PlayerModel.cpp.o
@@ -556,9 +602,10 @@ src/models/balls/PlayerModel.o: src/models/balls/PlayerModel.cpp.o
 
 # target to build an object file
 src/models/balls/PlayerModel.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/balls/PlayerModel.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/PlayerModel.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/PlayerModel.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/PlayerModel.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/balls/PlayerModel.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/balls/PlayerModel.cpp.o
 .PHONY : src/models/balls/PlayerModel.cpp.o
 
 src/models/balls/PlayerModel.i: src/models/balls/PlayerModel.cpp.i
@@ -567,9 +614,10 @@ src/models/balls/PlayerModel.i: src/models/balls/PlayerModel.cpp.i
 
 # target to preprocess a source file
 src/models/balls/PlayerModel.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/balls/PlayerModel.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/PlayerModel.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/PlayerModel.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/PlayerModel.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/balls/PlayerModel.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/balls/PlayerModel.cpp.i
 .PHONY : src/models/balls/PlayerModel.cpp.i
 
 src/models/balls/PlayerModel.s: src/models/balls/PlayerModel.cpp.s
@@ -578,9 +626,10 @@ src/models/balls/PlayerModel.s: src/models/balls/PlayerModel.cpp.s
 
 # target to generate assembly for a file
 src/models/balls/PlayerModel.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/balls/PlayerModel.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/PlayerModel.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/balls/PlayerModel.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/balls/PlayerModel.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/balls/PlayerModel.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/balls/PlayerModel.cpp.s
 .PHONY : src/models/balls/PlayerModel.cpp.s
 
 src/models/states/EndModel.o: src/models/states/EndModel.cpp.o
@@ -589,9 +638,10 @@ src/models/states/EndModel.o: src/models/states/EndModel.cpp.o
 
 # target to build an object file
 src/models/states/EndModel.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/states/EndModel.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/EndModel.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/EndModel.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/EndModel.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/states/EndModel.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/states/EndModel.cpp.o
 .PHONY : src/models/states/EndModel.cpp.o
 
 src/models/states/EndModel.i: src/models/states/EndModel.cpp.i
@@ -600,9 +650,10 @@ src/models/states/EndModel.i: src/models/states/EndModel.cpp.i
 
 # target to preprocess a source file
 src/models/states/EndModel.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/states/EndModel.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/EndModel.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/EndModel.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/EndModel.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/states/EndModel.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/states/EndModel.cpp.i
 .PHONY : src/models/states/EndModel.cpp.i
 
 src/models/states/EndModel.s: src/models/states/EndModel.cpp.s
@@ -611,9 +662,10 @@ src/models/states/EndModel.s: src/models/states/EndModel.cpp.s
 
 # target to generate assembly for a file
 src/models/states/EndModel.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/states/EndModel.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/EndModel.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/EndModel.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/EndModel.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/states/EndModel.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/states/EndModel.cpp.s
 .PHONY : src/models/states/EndModel.cpp.s
 
 src/models/states/PauseModel.o: src/models/states/PauseModel.cpp.o
@@ -622,9 +674,10 @@ src/models/states/PauseModel.o: src/models/states/PauseModel.cpp.o
 
 # target to build an object file
 src/models/states/PauseModel.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/states/PauseModel.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PauseModel.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/PauseModel.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PauseModel.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/states/PauseModel.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/states/PauseModel.cpp.o
 .PHONY : src/models/states/PauseModel.cpp.o
 
 src/models/states/PauseModel.i: src/models/states/PauseModel.cpp.i
@@ -633,9 +686,10 @@ src/models/states/PauseModel.i: src/models/states/PauseModel.cpp.i
 
 # target to preprocess a source file
 src/models/states/PauseModel.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/states/PauseModel.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PauseModel.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/PauseModel.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PauseModel.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/states/PauseModel.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/states/PauseModel.cpp.i
 .PHONY : src/models/states/PauseModel.cpp.i
 
 src/models/states/PauseModel.s: src/models/states/PauseModel.cpp.s
@@ -644,9 +698,10 @@ src/models/states/PauseModel.s: src/models/states/PauseModel.cpp.s
 
 # target to generate assembly for a file
 src/models/states/PauseModel.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/states/PauseModel.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PauseModel.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/PauseModel.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PauseModel.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/states/PauseModel.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/states/PauseModel.cpp.s
 .PHONY : src/models/states/PauseModel.cpp.s
 
 src/models/states/PlayModel.o: src/models/states/PlayModel.cpp.o
@@ -655,9 +710,10 @@ src/models/states/PlayModel.o: src/models/states/PlayModel.cpp.o
 
 # target to build an object file
 src/models/states/PlayModel.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/states/PlayModel.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PlayModel.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/PlayModel.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PlayModel.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/states/PlayModel.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/states/PlayModel.cpp.o
 .PHONY : src/models/states/PlayModel.cpp.o
 
 src/models/states/PlayModel.i: src/models/states/PlayModel.cpp.i
@@ -666,9 +722,10 @@ src/models/states/PlayModel.i: src/models/states/PlayModel.cpp.i
 
 # target to preprocess a source file
 src/models/states/PlayModel.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/states/PlayModel.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PlayModel.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/PlayModel.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PlayModel.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/states/PlayModel.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/states/PlayModel.cpp.i
 .PHONY : src/models/states/PlayModel.cpp.i
 
 src/models/states/PlayModel.s: src/models/states/PlayModel.cpp.s
@@ -677,9 +734,10 @@ src/models/states/PlayModel.s: src/models/states/PlayModel.cpp.s
 
 # target to generate assembly for a file
 src/models/states/PlayModel.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/states/PlayModel.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PlayModel.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/PlayModel.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/PlayModel.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/states/PlayModel.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/states/PlayModel.cpp.s
 .PHONY : src/models/states/PlayModel.cpp.s
 
 src/models/states/StartModel.o: src/models/states/StartModel.cpp.o
@@ -688,9 +746,10 @@ src/models/states/StartModel.o: src/models/states/StartModel.cpp.o
 
 # target to build an object file
 src/models/states/StartModel.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/states/StartModel.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/StartModel.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/StartModel.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/StartModel.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/states/StartModel.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/states/StartModel.cpp.o
 .PHONY : src/models/states/StartModel.cpp.o
 
 src/models/states/StartModel.i: src/models/states/StartModel.cpp.i
@@ -699,9 +758,10 @@ src/models/states/StartModel.i: src/models/states/StartModel.cpp.i
 
 # target to preprocess a source file
 src/models/states/StartModel.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/states/StartModel.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/StartModel.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/StartModel.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/StartModel.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/states/StartModel.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/states/StartModel.cpp.i
 .PHONY : src/models/states/StartModel.cpp.i
 
 src/models/states/StartModel.s: src/models/states/StartModel.cpp.s
@@ -710,9 +770,10 @@ src/models/states/StartModel.s: src/models/states/StartModel.cpp.s
 
 # target to generate assembly for a file
 src/models/states/StartModel.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/models/states/StartModel.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/StartModel.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/models/states/StartModel.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/models/states/StartModel.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/models/states/StartModel.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/models/states/StartModel.cpp.s
 .PHONY : src/models/states/StartModel.cpp.s
 
 src/views/AppView.o: src/views/AppView.cpp.o
@@ -721,9 +782,10 @@ src/views/AppView.o: src/views/AppView.cpp.o
 
 # target to build an object file
 src/views/AppView.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/AppView.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/AppView.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/AppView.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/AppView.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/AppView.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/AppView.cpp.o
 .PHONY : src/views/AppView.cpp.o
 
 src/views/AppView.i: src/views/AppView.cpp.i
@@ -732,9 +794,10 @@ src/views/AppView.i: src/views/AppView.cpp.i
 
 # target to preprocess a source file
 src/views/AppView.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/AppView.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/AppView.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/AppView.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/AppView.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/AppView.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/AppView.cpp.i
 .PHONY : src/views/AppView.cpp.i
 
 src/views/AppView.s: src/views/AppView.cpp.s
@@ -743,9 +806,10 @@ src/views/AppView.s: src/views/AppView.cpp.s
 
 # target to generate assembly for a file
 src/views/AppView.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/AppView.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/AppView.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/AppView.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/AppView.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/AppView.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/AppView.cpp.s
 .PHONY : src/views/AppView.cpp.s
 
 src/views/balls/BallView.o: src/views/balls/BallView.cpp.o
@@ -754,9 +818,10 @@ src/views/balls/BallView.o: src/views/balls/BallView.cpp.o
 
 # target to build an object file
 src/views/balls/BallView.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/balls/BallView.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BallView.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/BallView.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BallView.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/balls/BallView.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/balls/BallView.cpp.o
 .PHONY : src/views/balls/BallView.cpp.o
 
 src/views/balls/BallView.i: src/views/balls/BallView.cpp.i
@@ -765,9 +830,10 @@ src/views/balls/BallView.i: src/views/balls/BallView.cpp.i
 
 # target to preprocess a source file
 src/views/balls/BallView.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/balls/BallView.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BallView.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/BallView.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BallView.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/balls/BallView.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/balls/BallView.cpp.i
 .PHONY : src/views/balls/BallView.cpp.i
 
 src/views/balls/BallView.s: src/views/balls/BallView.cpp.s
@@ -776,9 +842,10 @@ src/views/balls/BallView.s: src/views/balls/BallView.cpp.s
 
 # target to generate assembly for a file
 src/views/balls/BallView.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/balls/BallView.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BallView.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/BallView.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BallView.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/balls/BallView.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/balls/BallView.cpp.s
 .PHONY : src/views/balls/BallView.cpp.s
 
 src/views/balls/BotView.o: src/views/balls/BotView.cpp.o
@@ -787,9 +854,10 @@ src/views/balls/BotView.o: src/views/balls/BotView.cpp.o
 
 # target to build an object file
 src/views/balls/BotView.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/balls/BotView.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BotView.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/BotView.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BotView.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/balls/BotView.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/balls/BotView.cpp.o
 .PHONY : src/views/balls/BotView.cpp.o
 
 src/views/balls/BotView.i: src/views/balls/BotView.cpp.i
@@ -798,9 +866,10 @@ src/views/balls/BotView.i: src/views/balls/BotView.cpp.i
 
 # target to preprocess a source file
 src/views/balls/BotView.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/balls/BotView.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BotView.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/BotView.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BotView.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/balls/BotView.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/balls/BotView.cpp.i
 .PHONY : src/views/balls/BotView.cpp.i
 
 src/views/balls/BotView.s: src/views/balls/BotView.cpp.s
@@ -809,9 +878,10 @@ src/views/balls/BotView.s: src/views/balls/BotView.cpp.s
 
 # target to generate assembly for a file
 src/views/balls/BotView.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/balls/BotView.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BotView.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/BotView.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/BotView.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/balls/BotView.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/balls/BotView.cpp.s
 .PHONY : src/views/balls/BotView.cpp.s
 
 src/views/balls/PlayerView.o: src/views/balls/PlayerView.cpp.o
@@ -820,9 +890,10 @@ src/views/balls/PlayerView.o: src/views/balls/PlayerView.cpp.o
 
 # target to build an object file
 src/views/balls/PlayerView.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/balls/PlayerView.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/PlayerView.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/PlayerView.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/PlayerView.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/balls/PlayerView.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/balls/PlayerView.cpp.o
 .PHONY : src/views/balls/PlayerView.cpp.o
 
 src/views/balls/PlayerView.i: src/views/balls/PlayerView.cpp.i
@@ -831,9 +902,10 @@ src/views/balls/PlayerView.i: src/views/balls/PlayerView.cpp.i
 
 # target to preprocess a source file
 src/views/balls/PlayerView.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/balls/PlayerView.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/PlayerView.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/PlayerView.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/PlayerView.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/balls/PlayerView.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/balls/PlayerView.cpp.i
 .PHONY : src/views/balls/PlayerView.cpp.i
 
 src/views/balls/PlayerView.s: src/views/balls/PlayerView.cpp.s
@@ -842,9 +914,10 @@ src/views/balls/PlayerView.s: src/views/balls/PlayerView.cpp.s
 
 # target to generate assembly for a file
 src/views/balls/PlayerView.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/balls/PlayerView.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/PlayerView.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/balls/PlayerView.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/balls/PlayerView.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/balls/PlayerView.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/balls/PlayerView.cpp.s
 .PHONY : src/views/balls/PlayerView.cpp.s
 
 src/views/states/EndView.o: src/views/states/EndView.cpp.o
@@ -853,9 +926,10 @@ src/views/states/EndView.o: src/views/states/EndView.cpp.o
 
 # target to build an object file
 src/views/states/EndView.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/states/EndView.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/EndView.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/EndView.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/EndView.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/states/EndView.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/states/EndView.cpp.o
 .PHONY : src/views/states/EndView.cpp.o
 
 src/views/states/EndView.i: src/views/states/EndView.cpp.i
@@ -864,9 +938,10 @@ src/views/states/EndView.i: src/views/states/EndView.cpp.i
 
 # target to preprocess a source file
 src/views/states/EndView.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/states/EndView.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/EndView.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/EndView.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/EndView.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/states/EndView.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/states/EndView.cpp.i
 .PHONY : src/views/states/EndView.cpp.i
 
 src/views/states/EndView.s: src/views/states/EndView.cpp.s
@@ -875,9 +950,10 @@ src/views/states/EndView.s: src/views/states/EndView.cpp.s
 
 # target to generate assembly for a file
 src/views/states/EndView.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/states/EndView.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/EndView.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/EndView.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/EndView.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/states/EndView.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/states/EndView.cpp.s
 .PHONY : src/views/states/EndView.cpp.s
 
 src/views/states/PauseView.o: src/views/states/PauseView.cpp.o
@@ -886,9 +962,10 @@ src/views/states/PauseView.o: src/views/states/PauseView.cpp.o
 
 # target to build an object file
 src/views/states/PauseView.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/states/PauseView.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PauseView.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/PauseView.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PauseView.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/states/PauseView.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/states/PauseView.cpp.o
 .PHONY : src/views/states/PauseView.cpp.o
 
 src/views/states/PauseView.i: src/views/states/PauseView.cpp.i
@@ -897,9 +974,10 @@ src/views/states/PauseView.i: src/views/states/PauseView.cpp.i
 
 # target to preprocess a source file
 src/views/states/PauseView.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/states/PauseView.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PauseView.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/PauseView.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PauseView.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/states/PauseView.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/states/PauseView.cpp.i
 .PHONY : src/views/states/PauseView.cpp.i
 
 src/views/states/PauseView.s: src/views/states/PauseView.cpp.s
@@ -908,9 +986,10 @@ src/views/states/PauseView.s: src/views/states/PauseView.cpp.s
 
 # target to generate assembly for a file
 src/views/states/PauseView.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/states/PauseView.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PauseView.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/PauseView.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PauseView.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/states/PauseView.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/states/PauseView.cpp.s
 .PHONY : src/views/states/PauseView.cpp.s
 
 src/views/states/PlayView.o: src/views/states/PlayView.cpp.o
@@ -919,9 +998,10 @@ src/views/states/PlayView.o: src/views/states/PlayView.cpp.o
 
 # target to build an object file
 src/views/states/PlayView.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/states/PlayView.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PlayView.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/PlayView.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PlayView.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/states/PlayView.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/states/PlayView.cpp.o
 .PHONY : src/views/states/PlayView.cpp.o
 
 src/views/states/PlayView.i: src/views/states/PlayView.cpp.i
@@ -930,9 +1010,10 @@ src/views/states/PlayView.i: src/views/states/PlayView.cpp.i
 
 # target to preprocess a source file
 src/views/states/PlayView.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/states/PlayView.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PlayView.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/PlayView.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PlayView.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/states/PlayView.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/states/PlayView.cpp.i
 .PHONY : src/views/states/PlayView.cpp.i
 
 src/views/states/PlayView.s: src/views/states/PlayView.cpp.s
@@ -941,9 +1022,10 @@ src/views/states/PlayView.s: src/views/states/PlayView.cpp.s
 
 # target to generate assembly for a file
 src/views/states/PlayView.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/states/PlayView.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PlayView.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/PlayView.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/PlayView.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/states/PlayView.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/states/PlayView.cpp.s
 .PHONY : src/views/states/PlayView.cpp.s
 
 src/views/states/StartView.o: src/views/states/StartView.cpp.o
@@ -952,9 +1034,10 @@ src/views/states/StartView.o: src/views/states/StartView.cpp.o
 
 # target to build an object file
 src/views/states/StartView.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/states/StartView.cpp.o
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/StartView.cpp.o
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/StartView.cpp.o
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/StartView.cpp.o
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/states/StartView.cpp.o
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/states/StartView.cpp.o
 .PHONY : src/views/states/StartView.cpp.o
 
 src/views/states/StartView.i: src/views/states/StartView.cpp.i
@@ -963,9 +1046,10 @@ src/views/states/StartView.i: src/views/states/StartView.cpp.i
 
 # target to preprocess a source file
 src/views/states/StartView.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/states/StartView.cpp.i
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/StartView.cpp.i
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/StartView.cpp.i
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/StartView.cpp.i
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/states/StartView.cpp.i
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/states/StartView.cpp.i
 .PHONY : src/views/states/StartView.cpp.i
 
 src/views/states/StartView.s: src/views/states/StartView.cpp.s
@@ -974,9 +1058,10 @@ src/views/states/StartView.s: src/views/states/StartView.cpp.s
 
 # target to generate assembly for a file
 src/views/states/StartView.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/src/views/states/StartView.cpp.s
-	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/StartView.cpp.s
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/src/views/states/StartView.cpp.s
+	$(MAKE) -f CMakeFiles/Agario.dir/build.make CMakeFiles/Agario.dir/src/views/states/StartView.cpp.s
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/src/views/states/StartView.cpp.s
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/src/views/states/StartView.cpp.s
 .PHONY : src/views/states/StartView.cpp.s
 
 tests/models/AppTest.o: tests/models/AppTest.cpp.o
@@ -1006,32 +1091,59 @@ tests/models/AppTest.cpp.s:
 	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/tests/models/AppTest.cpp.s
 .PHONY : tests/models/AppTest.cpp.s
 
-tests/models/BallModelTest.o: tests/models/BallModelTest.cpp.o
+tests/models/ObstacleModelTest.o: tests/models/ObstacleModelTest.cpp.o
 
-.PHONY : tests/models/BallModelTest.o
+.PHONY : tests/models/ObstacleModelTest.o
 
 # target to build an object file
-tests/models/BallModelTest.cpp.o:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/tests/models/BallModelTest.cpp.o
-.PHONY : tests/models/BallModelTest.cpp.o
+tests/models/ObstacleModelTest.cpp.o:
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/tests/models/ObstacleModelTest.cpp.o
+.PHONY : tests/models/ObstacleModelTest.cpp.o
 
-tests/models/BallModelTest.i: tests/models/BallModelTest.cpp.i
+tests/models/ObstacleModelTest.i: tests/models/ObstacleModelTest.cpp.i
 
-.PHONY : tests/models/BallModelTest.i
+.PHONY : tests/models/ObstacleModelTest.i
 
 # target to preprocess a source file
-tests/models/BallModelTest.cpp.i:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/tests/models/BallModelTest.cpp.i
-.PHONY : tests/models/BallModelTest.cpp.i
+tests/models/ObstacleModelTest.cpp.i:
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/tests/models/ObstacleModelTest.cpp.i
+.PHONY : tests/models/ObstacleModelTest.cpp.i
 
-tests/models/BallModelTest.s: tests/models/BallModelTest.cpp.s
+tests/models/ObstacleModelTest.s: tests/models/ObstacleModelTest.cpp.s
 
-.PHONY : tests/models/BallModelTest.s
+.PHONY : tests/models/ObstacleModelTest.s
 
 # target to generate assembly for a file
-tests/models/BallModelTest.cpp.s:
-	$(MAKE) -f CMakeFiles/BallModelTest.dir/build.make CMakeFiles/BallModelTest.dir/tests/models/BallModelTest.cpp.s
-.PHONY : tests/models/BallModelTest.cpp.s
+tests/models/ObstacleModelTest.cpp.s:
+	$(MAKE) -f CMakeFiles/ObstacleModelTest.dir/build.make CMakeFiles/ObstacleModelTest.dir/tests/models/ObstacleModelTest.cpp.s
+.PHONY : tests/models/ObstacleModelTest.cpp.s
+
+tests/models/PlayerModelTest.o: tests/models/PlayerModelTest.cpp.o
+
+.PHONY : tests/models/PlayerModelTest.o
+
+# target to build an object file
+tests/models/PlayerModelTest.cpp.o:
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/tests/models/PlayerModelTest.cpp.o
+.PHONY : tests/models/PlayerModelTest.cpp.o
+
+tests/models/PlayerModelTest.i: tests/models/PlayerModelTest.cpp.i
+
+.PHONY : tests/models/PlayerModelTest.i
+
+# target to preprocess a source file
+tests/models/PlayerModelTest.cpp.i:
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/tests/models/PlayerModelTest.cpp.i
+.PHONY : tests/models/PlayerModelTest.cpp.i
+
+tests/models/PlayerModelTest.s: tests/models/PlayerModelTest.cpp.s
+
+.PHONY : tests/models/PlayerModelTest.s
+
+# target to generate assembly for a file
+tests/models/PlayerModelTest.cpp.s:
+	$(MAKE) -f CMakeFiles/PlayerModelTest.dir/build.make CMakeFiles/PlayerModelTest.dir/tests/models/PlayerModelTest.cpp.s
+.PHONY : tests/models/PlayerModelTest.cpp.s
 
 # Help Target
 help:
@@ -1039,12 +1151,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... rebuild_cache"
-	@echo "... BallModelTest"
-	@echo "... Agario"
 	@echo "... AppTest"
+	@echo "... Agario"
+	@echo "... PlayerModelTest"
+	@echo "... ObstacleModelTest"
+	@echo "... test"
+	@echo "... edit_cache"
 	@echo "... src/controllers/AppController.o"
 	@echo "... src/controllers/AppController.i"
 	@echo "... src/controllers/AppController.s"
@@ -1123,9 +1236,12 @@ help:
 	@echo "... tests/models/AppTest.o"
 	@echo "... tests/models/AppTest.i"
 	@echo "... tests/models/AppTest.s"
-	@echo "... tests/models/BallModelTest.o"
-	@echo "... tests/models/BallModelTest.i"
-	@echo "... tests/models/BallModelTest.s"
+	@echo "... tests/models/ObstacleModelTest.o"
+	@echo "... tests/models/ObstacleModelTest.i"
+	@echo "... tests/models/ObstacleModelTest.s"
+	@echo "... tests/models/PlayerModelTest.o"
+	@echo "... tests/models/PlayerModelTest.i"
+	@echo "... tests/models/PlayerModelTest.s"
 .PHONY : help
 
 

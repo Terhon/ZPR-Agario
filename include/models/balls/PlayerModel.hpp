@@ -6,6 +6,8 @@
 class PlayerModel : public BallModel {
     private:
     public:
+        PlayerModel(int x, int y, int radius) : BallModel(x, y, radius) {}   
+        void update(){}
 };
 
 #endif

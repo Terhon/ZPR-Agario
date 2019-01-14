@@ -33,7 +33,7 @@ public:
 
 
     virtual void update(){}
-    int grow(int eatenRadius);
+    virtual int grow(int eatenRadius);
     virtual std::vector<BallModel>::iterator checkCollision(std::vector<BallModel> v);
 };
 
