@@ -1,6 +1,8 @@
 #ifndef APP_H
 #define APP_H
 
+#define FPS 60
+
 class AppController;
 class AppView;
 class StartModel;
@@ -13,6 +15,8 @@ class StateModel;
 #include <SFML/Graphics.hpp>
 #include <states/StateModel.hpp>
 #include <stack>
+#include <chrono>
+#include <thread>
 
 class App
 {
@@ -21,6 +25,7 @@ class App
     AppView* view;
     sf::RenderWindow* window;
     std::stack<StateModel*> state_stack;
+    std::chrono::milliseconds tick = std::chrono::milliseconds(1000/60);
 
     bool running;
 

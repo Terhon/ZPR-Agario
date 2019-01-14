@@ -4,13 +4,21 @@
 #include <states/StateModel.hpp>
 #include <states/PlayView.hpp>
 #include <states/PlayController.hpp>
+#include <balls/BallModel.hpp>
+#include <vector>
+
+class BallModel;
 
 class PlayModel : public StateModel
 {
+private:
+    std::vector<BallModel> balls;
+
 public:
     PlayModel(App* a);
     virtual void update();
 
+    void init();
     void pushPause();
     void pushEnd();
 };

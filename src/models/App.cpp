@@ -1,6 +1,8 @@
 #include <App.hpp>
 #include <states/StartModel.hpp>
 
+using namespace std::chrono;
+
 App::App() 
 {
     controller = new AppController(this);
@@ -28,10 +30,17 @@ void App::run()
     sf::Event event;
     while(running)
     {
+        high_resolution_clock::time_point t1 = high_resolution_clock::now();
+
         while(window->pollEvent(event))
             controller->handleEvents(event);
+
         update();
         view->draw();
+
+        milliseconds span = duration_cast<milliseconds>(high_resolution_clock::now().time_since_epoch() - t1.time_since_epoch());
+        if(span < tick)
+            std::this_thread::sleep_for(tick - span);
     }
 }
 
