@@ -5,8 +5,7 @@
 
 class BotModel : public BallModel {
     private:
-    public:
-        std::vector<BallModel>::iterator checkCollision(std::vector<BallModel> v);    
+    public:  
         void update(){}
 };
 

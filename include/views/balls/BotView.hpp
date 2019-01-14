@@ -1,7 +1,9 @@
 #ifndef AGARIO_BOTVIEW_HPP
 #define AGARIO_BOTVIEW_HPP
 
-class BotView {
+#include <balls/BallView.hpp>
+
+class BotView : public BallView {
 
 };
 
