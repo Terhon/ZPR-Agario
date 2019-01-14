@@ -31,6 +31,9 @@ public:
     int getAcceleration(){return acceleration;}
     void setAcceleration(int radius) {this->acceleration = acceleration;}
 
+    BallController* getController(){ return controller;}
+    BallView* getView(){ return view;}
+
     virtual void update();
     int grow(int eatenRadius);
 };

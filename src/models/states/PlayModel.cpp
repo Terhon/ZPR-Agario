@@ -5,32 +5,27 @@
 PlayModel::PlayModel(App* a)
 {
     app = a;
-    view = new PlayView();
+    view = new PlayView(this);
     controller = new PlayController(this);
+    balls = new std::vector<BallModel>;
     init();
 }
 
 void PlayModel::init()
-{
-    balls.push_back(new PlayerModel());
+{/*
+    balls->push_back(new PlayerModel());
     for(int i = 0; i < 4; i++)
-        balls.push_back(new BotModel());
+        balls->push_back(new BotModel());
 
     for(int i = 0; i < 10; i++)
-        balls.push_back(new FoodModel());
+        balls->push_back(new FoodModel());*/
 }
 
 void PlayModel::update()
 {
-    for(auto it = balls.begin(); it != balls.end();)
+    for(auto it = balls->begin(); it != balls->end();)
     {
-        if((*it).collides(balls))
-            balls.erase(it);
-        else
-        {
-            (*it).update();
-            ++it;
-        }
+        (*it).update();
 
     }
 }

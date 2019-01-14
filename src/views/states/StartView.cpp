@@ -1,6 +1,6 @@
 #include <states/StartView.hpp>
 
-StartView::StartView() {
+StartView::StartView(StartModel* m):StateView(m) {
     loadBackground();
     loadText();
 }

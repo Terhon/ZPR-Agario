@@ -4,7 +4,7 @@
 StartModel::StartModel(App* a)
 {
     app = a;
-    view = new StartView();
+    view = new StartView(this);
     controller = new StartController(this);
 }
 

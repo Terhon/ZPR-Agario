@@ -2,10 +2,12 @@
 #define STARTVIEW_HPP
 
 #include <states/StateView.hpp>
+#include <states/PauseModel.hpp>
 #include <iostream>
 #include <sstream>
 #include <string>
 
+class PauseModel;
 
 class PauseView : public StateView {
     private:
@@ -17,7 +19,7 @@ class PauseView : public StateView {
     public:
     virtual void draw(sf::RenderWindow* window);
     void loadText();
-    PauseView();
+    PauseView(PauseModel* m);
 };
 
 #endif

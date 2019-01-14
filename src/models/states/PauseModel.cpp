@@ -5,7 +5,7 @@
 PauseModel::PauseModel(App* a)
 {
     app = a;
-    view = new PauseView();
+    view = new PauseView(this);
     controller = new PauseController(this);
 }
 

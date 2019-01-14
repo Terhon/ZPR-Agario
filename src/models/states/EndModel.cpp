@@ -4,7 +4,7 @@
 EndModel::EndModel(App* a)
 {
     app = a;
-    view = new EndView();
+    view = new EndView(this);
     controller = new EndController(this);
 }
 

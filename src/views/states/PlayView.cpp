@@ -1,6 +1,6 @@
 #include <states/PlayView.hpp>
 
-PlayView::PlayView() {
+PlayView::PlayView(PlayModel* m):StateView(m) {
     bckgColor = sf::Color::Black;
     loadText();
 }
@@ -9,6 +9,12 @@ void PlayView::draw(sf::RenderWindow* window)
 {
     window->clear(sf::Color(160, 141, 158));
     window->draw(instruction);
+
+    auto l = dynamic_cast<PlayModel*> (model)->getBalls();
+    for(auto it = l->begin(); it != l->end();)
+    {
+        (*it).getView()->draw(window);
+    }
 }
 
 void PlayView::loadText(){

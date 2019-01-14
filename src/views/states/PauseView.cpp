@@ -1,6 +1,6 @@
 #include <states/PauseView.hpp>
 
-PauseView::PauseView() {
+PauseView::PauseView(PauseModel* m):StateView(m) {
     loadText();
 }
 

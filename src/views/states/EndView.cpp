@@ -1,6 +1,6 @@
 #include <states/EndView.hpp>
 
-EndView::EndView() {
+EndView::EndView(EndModel* m):StateView(m) {
     loadBackground();
     loadText();
 }

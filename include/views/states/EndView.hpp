@@ -2,9 +2,12 @@
 #define STARTVIEW_HPP
 
 #include <states/StateView.hpp>
+#include <states/EndModel.hpp>
 #include <iostream>
 #include <sstream>
 #include <string>
+
+class EndModel;
 
 class EndView : public StateView {
     private:
@@ -19,7 +22,7 @@ class EndView : public StateView {
     virtual void draw(sf::RenderWindow* window);
     void loadBackground();
     void loadText();
-    EndView();
+    EndView(EndModel* model);
 };
 
 #endif

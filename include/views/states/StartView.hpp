@@ -2,7 +2,10 @@
 #define STARTVIEW_HPP
 
 #include <states/StateView.hpp>
+#include <states/StartModel.hpp>
 #include <iostream>
+
+class StartModel;
 
 class StartView : public StateView
 {
@@ -18,7 +21,8 @@ class StartView : public StateView
     virtual void draw(sf::RenderWindow* window);
     void loadBackground();
     void loadText();
-    StartView();
+
+    StartView(StartModel* m);
 };
 
 #endif
