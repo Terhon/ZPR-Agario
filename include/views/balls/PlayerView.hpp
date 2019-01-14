@@ -7,7 +7,6 @@
 class PlayerView : public BallView{
     private:
     public:
-        PlayerView(PlayerModel * model) : BallView(model){}
         virtual void draw(sf::RenderWindow* window);
 };
 

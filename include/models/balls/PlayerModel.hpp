@@ -3,4 +3,4 @@
 class PlayerModel : public BallModel {
     private:
     public:
-}
+};

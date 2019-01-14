@@ -33,9 +33,6 @@ public:
 
     virtual void update();
     int grow(int eatenRadius);
-
-    BallModel();
-    BallModel(int x, int y);
 };
 
 #endif //AGARIO_BALLMODEL_HPP

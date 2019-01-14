@@ -8,9 +8,10 @@ class BallView
 protected: 
     BallModel * model;
     sf::Color * color;
-    sf::Shape * shape;
+    sf::CircleShape * shape;
 public:
-    BallView(BallModel * model, sf::Color * color);
+    BallView(BallModel* m):model(m){};
+    BallView(BallModel * m, sf::Color * color);
     void setColor(sf::Color * color) {this->color = color;}
     sf::Color * getColor() {return color;}
     virtual void draw(sf::RenderWindow* window);
