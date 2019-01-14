@@ -19,14 +19,14 @@ struct ObstacleModelFixture {
 };
 
 BOOST_FIXTURE_TEST_CASE(collision_doesnt_delete_smaller_balls, ObstacleModelFixture){
-    std::vector<BallModel> v;
+    std::vector<BallModel*>* v = new std::vector<BallModel*>;
     BallModel * b1 = new BotModel(0, 0, 20);
 
-    v.push_back(*(new BotModel(0, 0, 10)));
-    v.push_back(*(b1));
-    v.push_back(*(new BotModel(0, 0, 30)));
+    v->push_back(new BotModel(0, 0, 10));
+    v->push_back(b1);
+    v->push_back(new BotModel(0, 0, 30));
 
     o->checkCollision(v);
-    BOOST_CHECK(v.size() == 3);
+    BOOST_CHECK(v->size() == 3);
 }
 

@@ -14,7 +14,7 @@ PlayModel::PlayModel(App* a)
 
 void PlayModel::init()
 {
-    balls->push_back(new PlayerModel(100,100,10));
+    balls->push_back(new PlayerModel(100,100,1));
  /*   for(int i = 0; i < 4; i++)
         balls->push_back(new BotModel());
 

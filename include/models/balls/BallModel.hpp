@@ -27,7 +27,7 @@ public:
     int getRadius(){return radius;}
     void setRadius(int radius) {this->radius = radius;}
 
-    virtual std::vector<BallModel*>::iterator checkCollision(std::vector<BallModel*>* v) = 0;
+    virtual std::vector<BallModel*>::iterator checkCollision(std::vector<BallModel*>* v);
 
     BallController* getController(){ return controller;}
     BallView* getView(){ return view;}
