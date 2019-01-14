@@ -11,7 +11,7 @@ void PlayController::handleEvents(sf::Event event)
         dynamic_cast<PlayModel*> (model)->pushPause();
 
     auto l = dynamic_cast<PlayModel*> (model)->getBalls();
-    for(auto it = l->begin(); it != l->end();)
+    for(auto it = l->begin(); it != l->end();++it)
     {
         (*it)->getController()->handleEvents(event);
     }

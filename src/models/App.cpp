@@ -32,7 +32,7 @@ void App::run()
     {
         high_resolution_clock::time_point t1 = high_resolution_clock::now();
 
-        if(window->pollEvent(event))
+        while(window->pollEvent(event))
             controller->handleEvents(event);
 
         update();

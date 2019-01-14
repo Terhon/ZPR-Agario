@@ -11,7 +11,7 @@ void PlayView::draw(sf::RenderWindow* window)
     window->draw(instruction);
 
     auto l = dynamic_cast<PlayModel*> (model)->getBalls();
-    for(auto it = l->begin(); it != l->end();)
+    for(auto it = l->begin(); it != l->end();++it)
     {
         (*it)->getView()->draw(window);
     }
