@@ -3,6 +3,7 @@
 #include <boost/test/unit_test.hpp>
 
 #include <App.hpp>
+#include <states/StartModel.hpp>
 
 struct AppFixture {
     AppFixture() { 
