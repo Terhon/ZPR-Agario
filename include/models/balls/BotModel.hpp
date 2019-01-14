@@ -6,6 +6,7 @@
 class BotModel : public BallModel {
     private:
     public:  
+        BotModel(int x, int y, int radius) : BallModel(x, y, radius) {}
         void update(){}
 };
 

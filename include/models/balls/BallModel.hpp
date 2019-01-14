@@ -19,7 +19,7 @@ protected:
     double acceleration;
 
 public:
-
+    BallModel(int x, int y, int radius) : x(x), y(y), radius(radius) {}
     int getX() {return x;}
     void setX(int x){this->x = x;}
     int getY() {return y;}
