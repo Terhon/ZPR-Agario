@@ -12,9 +12,9 @@ protected:
     BallModel* model;
 
 public:
-    BallController(BallModel* app);
+    BallController(BallModel* m):model(m){}
 
-    virtual void handleEvents(sf::Event event);
+    virtual void handleEvents(sf::Event event) = 0;
 };
 
 #endif //AGARIO_BALLCONTROLLER_HPP

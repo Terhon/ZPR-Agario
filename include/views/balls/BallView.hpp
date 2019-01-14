@@ -3,6 +3,8 @@
 
 #include <balls/BallModel.hpp>
 
+class BallModel;
+
 class BallView
 {
 protected: 
@@ -10,7 +12,6 @@ protected:
     sf::Color * color;
     sf::CircleShape * shape;
 public:
-    BallView(BallModel* m):model(m){};
     BallView(BallModel * m, sf::Color * color);
     void setColor(sf::Color * color) {this->color = color;}
     sf::Color * getColor() {return color;}

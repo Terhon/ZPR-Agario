@@ -13,7 +13,7 @@ void PlayView::draw(sf::RenderWindow* window)
     auto l = dynamic_cast<PlayModel*> (model)->getBalls();
     for(auto it = l->begin(); it != l->end();)
     {
-        (*it).getView()->draw(window);
+        (*it)->getView()->draw(window);
     }
 }
 

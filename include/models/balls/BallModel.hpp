@@ -4,6 +4,7 @@
 #include <balls/BallController.hpp>
 #include <balls/BallView.hpp>
 #include <cmath>
+#include <vector>
 
 class BallController;
 class BallView;
@@ -13,29 +14,28 @@ class BallModel
 protected:
     BallController* controller;
     BallView* view;
-    int x, y;
-    int radius;
-    double velocity;
+    double x, y;
+    double radius;
+    double velX = 0, velY = 0;
     double acceleration;
 
 public:
-
     int getX() {return x;}
     void setX(int x){this->x = x;}
     int getY() {return y;}
     void setY(int y){this->y = y;}
     int getRadius(){return radius;}
     void setRadius(int radius) {this->radius = radius;}
-    int getVelocity(){return velocity;}
-    void setVelocity(int radius) {this->velocity = velocity;}
-    int getAcceleration(){return acceleration;}
-    void setAcceleration(int radius) {this->acceleration = acceleration;}
+
+    virtual std::vector<BallModel*>::iterator checkCollision(std::vector<BallModel*> v) = 0;
 
     BallController* getController(){ return controller;}
     BallView* getView(){ return view;}
 
-    virtual void update();
+    virtual void update() = 0;
     int grow(int eatenRadius);
+
+    BallModel(int x, int y, int r);
 };
 
 #endif //AGARIO_BALLMODEL_HPP

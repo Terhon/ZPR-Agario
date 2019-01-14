@@ -13,6 +13,6 @@ void PlayController::handleEvents(sf::Event event)
     auto l = dynamic_cast<PlayModel*> (model)->getBalls();
     for(auto it = l->begin(); it != l->end();)
     {
-        (*it).getController()->handleEvents(event);
+        (*it)->getController()->handleEvents(event);
     }
 }

@@ -12,13 +12,13 @@ class BallModel;
 class PlayModel : public StateModel
 {
 private:
-    std::vector<BallModel>* balls;
+    std::vector<BallModel*>* balls;
 
 public:
     PlayModel(App* a);
     virtual void update();
 
-    std::vector<BallModel>* getBalls(){return balls;}
+    std::vector<BallModel*>* getBalls(){return balls;}
 
     void init();
     void pushPause();

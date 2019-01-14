@@ -5,9 +5,10 @@
 #include <balls/PlayerModel.hpp>
 
 class PlayerView : public BallView{
-    private:
-    public:
-        virtual void draw(sf::RenderWindow* window);
+private:
+public:
+    PlayerView(PlayerModel * m, sf::Color * c);
+    virtual void draw(sf::RenderWindow* window);
 };
 
 #endif
