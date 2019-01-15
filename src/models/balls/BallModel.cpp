@@ -10,7 +10,7 @@ void BallModel::keepInWindow()
     if(x > 1200)
         x = -2*radius;
     else if(x < -2*radius)
-        x = 800;
+        x = 1200;
     if(y > 800)
         y = -2*radius;
     else if(y < -2*radius)
