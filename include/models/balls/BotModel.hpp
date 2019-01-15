@@ -9,7 +9,7 @@ class BotModel : public BallModel {
     private:
     public:  
         BotModel(int x, int y, int r);
-        void update(){}
+        virtual void update();
 };
 
 #endif

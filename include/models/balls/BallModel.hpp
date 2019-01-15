@@ -38,6 +38,7 @@ public:
     BallView* getView(){ return view;}
 
     virtual void update() = 0;
+    void keepInWindow();
     int grow(int eatenRadius);
 
     BallModel(int x, int y, int r);

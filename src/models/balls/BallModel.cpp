@@ -2,7 +2,19 @@
 
 BallModel::BallModel(int x, int y, int r):x(x), y(y), radius(r)
 {
-    velocity = 50/radius;
+    velocity = 100/radius;
+}
+
+void BallModel::keepInWindow()
+{
+    if(x > 1200)
+        x = -2*radius;
+    else if(x < -2*radius)
+        x = 800;
+    if(y > 800)
+        y = -2*radius;
+    else if(y < -2*radius)
+        y = 800;
 }
 
 int BallModel::grow(int eatenRadius){ //eaten ball's radius
