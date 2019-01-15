@@ -23,16 +23,30 @@ void PlayModel::init()
 
     for(int i = 0; i < 10; i++)
         balls->push_back(new BotModel(distX(gen), distY(gen), distR(gen)));
-/*
-    for(int i = 0; i < 10; i++)
-        balls->push_back(new FoodModel());*/
+
+
+    int foodCount = rand() % 20 + 10;
+    int x;
+    int y;
+
+    srand (time(NULL));
+    
+    for (int i = 0; i < foodCount; ++i) {
+        x = rand() % 900 - 50;
+        y = rand() % 700 - 50;
+        balls->push_back(new BotModel(x, y, 9));
+    }
+
+ //   for(int i = 0; i < 15; i++)
+     //   balls->push_back(new BotModel(distX(gen), distY(gen), 9));
 }
 
 void PlayModel::update()
 {
     for(auto it = balls->begin(); it != balls->end();++it)
     {
-        (*it)->update();
+        if ((*it)->getRadius() > 9)
+            (*it)->update();
         auto consumed = (*it)->checkCollision(balls);
         if(consumed != balls->end())
         {
