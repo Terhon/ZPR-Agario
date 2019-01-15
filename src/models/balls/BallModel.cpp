@@ -28,9 +28,12 @@ int BallModel::grow(int eatenRadius){ //eaten ball's radius
 std::vector<BallModel*>::iterator BallModel::checkCollision(std::vector<BallModel*>* v){
     for (auto b = v->begin(); b != v->end(); ++b) {
         if((*b) != this)
-            if(abs(x + radius/2 - ((*b)->getX() + (*b)->getRadius()/2)) < (radius + (*b)->getRadius()))
-                if(abs(y + radius/2 - ((*b)->getY() + (*b)->getRadius()/2)) < (radius + (*b)->getRadius()))
-                    if(radius > (*b)->getRadius())
+      //      if(abs(x - (*b)->getX()) < (radius + (*b)->getRadius()))
+        //        if(abs(y - (*b)->getY()) < (radius + (*b)->getRadius()))
+
+              if(abs(x + radius - ((*b)->getX() + (*b)->getRadius())) < (radius + (*b)->getRadius()))
+                  if(abs(y + radius - ((*b)->getY() + (*b)->getRadius())) < (radius + (*b)->getRadius()))
+                      if(radius > (*b)->getRadius())
                         return b;
     }
 

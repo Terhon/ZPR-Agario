@@ -6,10 +6,13 @@ using namespace std::chrono;
 
 BotModel::BotModel(int x, int y, int r):BallModel(x,y,r)
 {
-    view = new BotView(this, new sf::Color(0,0,100));
+    view = new BotView(this, new sf::Color(0,0,255));
+
     controller = new BotController(this);
     gen = new std::default_random_engine(std::chrono::system_clock::now().time_since_epoch().count());
     std::uniform_int_distribution<int> dist(0, 360);
+    std::uniform_int_distribution<int> distColor(0,255);
+    view->setColor(new sf::Color(distColor(*gen), distColor(*gen), distColor(*gen)));
     angle = dist(*gen);
     lastDecision = std::chrono::high_resolution_clock::now();
 
@@ -23,6 +26,7 @@ void BotModel::update()
 
     x+=velX;
     y+=velY;
+
     keepInWindow();
 }
 

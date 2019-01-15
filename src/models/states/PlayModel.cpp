@@ -10,47 +10,48 @@ PlayModel::PlayModel(App* a)
     controller = new PlayController(this);
     balls = new std::vector<BallModel*>;
     init();
+    foods = 10;
 }
 
 void PlayModel::init()
 {
     balls->push_back(new PlayerModel(570,370,30));
 
-    std::default_random_engine gen(std::chrono::system_clock::now().time_since_epoch().count());
-    std::uniform_int_distribution<int> distX(150,500);
-    std::uniform_int_distribution<int> distY(1,800);
-    std::uniform_int_distribution<int> distR(10,20);
+    throwBots(10);
+    throwFood(10);
 
-    for(int i = 0; i < 10; i++)
-        balls->push_back(new BotModel(distX(gen), distY(gen), distR(gen)));
-/*
-    for(int i = 0; i < 10; i++)
-        balls->push_back(new FoodModel());*/
 }
 
 void PlayModel::update()
 {
-    std::default_random_engine gen(std::chrono::system_clock::now().time_since_epoch().count());
-    std::uniform_int_distribution<int> distX(-150,-50);
-    std::uniform_int_distribution<int> distY(1,800);
-    std::uniform_int_distribution<int> distR(10,20);
-    if(balls->size() < 5)
-        balls->push_back(new BotModel(distX(gen), distY(gen), distR(gen)));
-
-    for(auto it = balls->begin(); it != balls->end();++it)
-    {
-        if((*it)->getRadius() > 20)
+    for (auto it = balls->begin(); it != balls->end(); ++it) {
+        if ((*it)->getRadius() > 9)
             (*it)->update();
+
         auto consumed = (*it)->checkCollision(balls);
-        if(consumed != balls->end())
-        {
-            if(dynamic_cast<PlayerModel*>(*consumed))
+        if (consumed != balls->end()) {
+            if (dynamic_cast<PlayerModel *>(*consumed))
                 pushEnd();
 
             (*it)->grow((*consumed)->getRadius());
+            if ((*consumed)->getRadius() <= 9) {
+                --foods;
+            }
+            delete (*consumed);
             balls->erase(consumed);
-            if(it == balls->end())
+            if (it == balls->end())
                 break;
+        }
+    }
+
+    if (foods < 5) {
+        std::default_random_engine gen(std::chrono::system_clock::now().time_since_epoch().count());
+        std::uniform_int_distribution<int> dist(-10, 10);
+
+        if (dist(gen) > 0) {
+            throwFood(5);
+        } else {
+            throwBots(2);
         }
     }
 }
@@ -68,4 +69,25 @@ void PlayModel::pushPause()
 void PlayModel::pushEnd()
 {
     app->pushStack(new EndModel(app, getScore()));
+}
+
+void PlayModel::throwFood(int n) {
+    std::default_random_engine gen(std::chrono::system_clock::now().time_since_epoch().count());
+    std::uniform_int_distribution<int> distX(0, 1200);
+    std::uniform_int_distribution<int> distY(0, 800);
+
+    for (int i = 0; i < n; ++i) {
+        balls->push_back(new BotModel(distX(gen), distY(gen), 9));
+        ++foods;
+    }
+}
+
+void PlayModel::throwBots(int n){
+  std::default_random_engine gen(std::chrono::system_clock::now().time_since_epoch().count());
+  std::uniform_int_distribution<int> distX(-150,-50);
+  std::uniform_int_distribution<int> distY(1,800);
+  std::uniform_int_distribution<int> distR(10,60);
+
+  for(int i = 0; i < n; i++)
+      balls->push_back(new BotModel(distX(gen), distY(gen), distR(gen)));
 }
