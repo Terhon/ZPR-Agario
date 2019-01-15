@@ -23,6 +23,7 @@ void BotModel::update()
 
     x+=velX;
     y+=velY;
+
     keepInWindow();
 }
 
