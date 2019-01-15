@@ -7,22 +7,23 @@
 
 class StartModel;
 
-class StartView : public StateView
-{
-    private:
+class StartView : public StateView {
+private:
     sf::Image background;
     sf::Texture texture;
     sf::Sprite sprite;
     sf::Font font;
     sf::Text title;
     sf::Text instruction;
-    
-    public:
-    virtual void draw(sf::RenderWindow* window);
+
+public:
+    virtual void draw(sf::RenderWindow *window);
+
     void loadBackground();
+
     void loadText();
 
-    StartView(StartModel* m);
+    StartView(StartModel *m);
 };
 
 #endif

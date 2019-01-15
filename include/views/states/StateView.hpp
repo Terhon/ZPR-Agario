@@ -6,14 +6,14 @@
 
 class StateModel;
 
-class StateView
-{
+class StateView {
 protected:
-    StateModel* model;
+    StateModel *model;
 
 public:
-    StateView(StateModel* m):model(m){};
-    virtual void draw(sf::RenderWindow* window) = 0;
+    StateView(StateModel *m) : model(m) {};
+
+    virtual void draw(sf::RenderWindow *window) = 0;
 
 };
 

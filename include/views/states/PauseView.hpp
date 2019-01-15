@@ -10,18 +10,20 @@
 class PauseModel;
 
 class PauseView : public StateView {
-    private:
-    sf::Color * bckgColor;
+private:
+    sf::Color *bckgColor;
     sf::Font font;
     sf::Text instruction;
     sf::Text score;
-    
-    public:
-    virtual void draw(sf::RenderWindow* window);
+
+public:
+    virtual void draw(sf::RenderWindow *window);
+
     void loadText();
+
     void updateScore();
 
-    PauseView(PauseModel* m);
+    PauseView(PauseModel *m);
 };
 
 #endif

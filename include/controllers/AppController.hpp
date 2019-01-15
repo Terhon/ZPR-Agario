@@ -6,13 +6,12 @@
 
 class App;
 
-class AppController
-{
-    private:
+class AppController {
+private:
     App *app;
 
-    public:
-    AppController(App* app);
+public:
+    AppController(App *app);
 
     void handleEvents(sf::Event event);
 };

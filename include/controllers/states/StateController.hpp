@@ -5,14 +5,14 @@
 #include <SFML/Window.hpp>
 
 class StateModel;
+
 class StateView;
 
-class StateController 
-{    
-    protected:
-    StateModel* model;
+class StateController {
+protected:
+    StateModel *model;
 
-    public:
+public:
     virtual void handleEvents(sf::Event event) = 0;
 };
 

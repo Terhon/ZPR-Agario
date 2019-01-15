@@ -7,10 +7,10 @@
 
 class EndModel;
 
-class EndController : public StateController
-{
+class EndController : public StateController {
 public:
-    EndController(EndModel* m);
+    EndController(EndModel *m);
+
     virtual void handleEvents(sf::Event event);
 };
 

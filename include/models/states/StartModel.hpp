@@ -5,10 +5,10 @@
 #include <states/StartView.hpp>
 #include <states/StartController.hpp>
 
-class StartModel : public StateModel 
-{
-    public:
-    StartModel(App* a);
+class StartModel : public StateModel {
+public:
+    StartModel(App *a);
+
     virtual void update();
 
     void pushPlay();

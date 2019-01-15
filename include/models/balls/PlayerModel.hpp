@@ -4,10 +4,11 @@
 #include <balls/BallModel.hpp>
 
 class PlayerModel : public BallModel {
-    private:
-    public:
+private:
+public:
 
     PlayerModel(int x, int y, int r);
+
     virtual void update();
 };
 

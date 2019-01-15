@@ -8,7 +8,7 @@ class BotModel;
 
 class BotView : public BallView {
 public:
-    BotView(BotModel* m, sf::Color* c);
+    BotView(BotModel *m, sf::Color *c);
 
 };
 

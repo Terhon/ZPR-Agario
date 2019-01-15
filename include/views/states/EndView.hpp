@@ -10,19 +10,22 @@
 class EndModel;
 
 class EndView : public StateView {
-    private:
+private:
     sf::Image background;
     sf::Texture texture;
     sf::Sprite sprite;
     sf::Font font;
     sf::Text score;
     sf::Text instruction;
-    
-    public:
-    virtual void draw(sf::RenderWindow* window);
+
+public:
+    virtual void draw(sf::RenderWindow *window);
+
     void loadBackground();
+
     void loadText();
-    EndView(EndModel* model);
+
+    EndView(EndModel *model);
 };
 
 #endif

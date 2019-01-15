@@ -5,13 +5,12 @@
 
 class BallModel;
 
-class BallController
-{
+class BallController {
 protected:
-    BallModel* model;
+    BallModel *model;
 
 public:
-    BallController(BallModel* m):model(m){}
+    BallController(BallModel *m) : model(m) {}
 
     virtual void handleEvents(sf::Event event) = 0;
 };

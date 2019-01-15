@@ -14,10 +14,11 @@ private:
     sf::Text instruction;
 
 public:
-    virtual void draw(sf::RenderWindow* window);
+    virtual void draw(sf::RenderWindow *window);
+
     void loadText();
 
-    PlayView(PlayModel* m);
+    PlayView(PlayModel *m);
 };
 
 #endif //AGARIO_PLAYVIEW_HPP

@@ -11,24 +11,28 @@
 
 class BallModel;
 
-class PlayModel : public StateModel
-{
+class PlayModel : public StateModel {
 private:
-    std::vector<BallModel*>* balls;
+    std::vector<BallModel *> *balls;
     int foods;
 
 public:
-    PlayModel(App* a);
+    PlayModel(App *a);
+
     virtual void update();
 
-    std::vector<BallModel*>* getBalls(){return balls;}
+    std::vector<BallModel *> *getBalls() { return balls; }
 
     int getScore();
 
     void init();
+
     void pushPause();
+
     void pushEnd();
+
     void throwFood(int n);
+
     void throwBots(int n);
 };
 

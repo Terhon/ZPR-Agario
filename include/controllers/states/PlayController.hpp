@@ -7,10 +7,10 @@
 
 class PlayModel;
 
-class PlayController : public StateController
-{
+class PlayController : public StateController {
 public:
-    PlayController(PlayModel* m);
+    PlayController(PlayModel *m);
+
     virtual void handleEvents(sf::Event event);
 };
 

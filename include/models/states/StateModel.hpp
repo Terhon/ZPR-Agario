@@ -5,17 +5,18 @@
 #include <states/StateController.hpp>
 #include <App.hpp>
 
-class StateModel 
-{   
-    protected:
-    App* app;
-    StateView* view;
-    StateController* controller;
+class StateModel {
+protected:
+    App *app;
+    StateView *view;
+    StateController *controller;
 
-    public:
+public:
     virtual void update() = 0;
-    virtual StateView* getView(){return view;}
-    virtual StateController* getController(){return controller;}
+
+    virtual StateView *getView() { return view; }
+
+    virtual StateController *getController() { return controller; }
 };
 
 #endif 

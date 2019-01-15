@@ -5,13 +5,12 @@
 
 class App;
 
-class AppView
-{
-    private:
-    App* model;
+class AppView {
+private:
+    App *model;
 
-    public:
-    AppView(App* app):model(app){}
+public:
+    AppView(App *app) : model(app) {}
 
     void draw();
 };

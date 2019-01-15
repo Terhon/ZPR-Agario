@@ -4,8 +4,11 @@
 #define FPS 60
 
 class AppController;
+
 class AppView;
+
 class StartModel;
+
 class StateModel;
 
 #include <iostream>
@@ -18,31 +21,38 @@ class StateModel;
 #include <chrono>
 #include <thread>
 
-class App
-{
-    private:
-    AppController* controller;
-    AppView* view;
-    sf::RenderWindow* window;
-    std::stack<StateModel*> state_stack;
-    std::chrono::milliseconds tick = std::chrono::milliseconds(1000/60);
+class App {
+private:
+    AppController *controller;
+    AppView *view;
+    sf::RenderWindow *window;
+    std::stack<StateModel *> state_stack;
+    std::chrono::milliseconds tick = std::chrono::milliseconds(1000 / 60);
 
     bool running;
 
-    public:
+public:
     App();
+
     ~App();
 
     void initWindow();
+
     void run();
 
     void update();
-    void setRunning(bool val){ running = val; }
-    void pushStack(StateModel * state);
+
+    void setRunning(bool val) { running = val; }
+
+    void pushStack(StateModel *state);
+
     void popStack();
-    StateModel* peekStack();
-    int stackSize() {return state_stack.size();};
-    sf::RenderWindow* getWindow(){ return window; }
+
+    StateModel *peekStack();
+
+    int stackSize() { return state_stack.size(); };
+
+    sf::RenderWindow *getWindow() { return window; }
 };
 
 #endif

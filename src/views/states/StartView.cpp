@@ -1,29 +1,28 @@
 #include <states/StartView.hpp>
 
-StartView::StartView(StartModel* m):StateView(m) {
+StartView::StartView(StartModel *m) : StateView(m) {
     loadBackground();
     loadText();
 }
 
-void StartView::draw(sf::RenderWindow* window)
-{
+void StartView::draw(sf::RenderWindow *window) {
     window->draw(sprite);
     window->draw(title);
     window->draw(instruction);
 }
 
-void StartView::loadBackground(){
+void StartView::loadBackground() {
     try {
         background.loadFromFile("resources/background.jpg");
         texture.loadFromImage(background);
         sprite.setTexture(texture, true);
     }
-    catch(const std::exception& e){
+    catch (const std::exception &e) {
         std::cout << "Failed loading background" << std::endl;
     }
 }
 
-void StartView::loadText(){
+void StartView::loadText() {
     try {
         font.loadFromFile("resources/Manjari-Thin.otf");
 
@@ -35,13 +34,14 @@ void StartView::loadText(){
         title.setPosition(470, 130);
 
         instruction.setFont(font);
-        instruction.setString("Eat balls smaller than you,\navoid those that can eat you.\nUse the mouse to move.\n\nPress S to start\nIn game press P to pause");
+        instruction.setString(
+                "Eat balls smaller than you,\navoid those that can eat you.\nUse the mouse to move.\n\nPress S to start\nIn game press P to pause");
         instruction.setCharacterSize(40); // in pixels, not points!
         instruction.setFillColor(sf::Color::Black);
-    //    instruction.setStyle(sf::Text::Bold);
+        //    instruction.setStyle(sf::Text::Bold);
         instruction.setPosition(290, 250);
     }
-    catch(const std::exception& e){
+    catch (const std::exception &e) {
         std::cout << "Failed loading font" << std::endl;
     }
 

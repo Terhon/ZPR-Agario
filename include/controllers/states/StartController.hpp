@@ -7,10 +7,10 @@
 
 class StartModel;
 
-class StartController : public StateController 
-{
-    public:
-    StartController(StartModel* m);
+class StartController : public StateController {
+public:
+    StartController(StartModel *m);
+
     virtual void handleEvents(sf::Event event);
 };
 

@@ -5,19 +5,21 @@
 #include <states/PauseView.hpp>
 #include <states/PauseController.hpp>
 
-class PauseModel : public StateModel
-{
+class PauseModel : public StateModel {
 private:
     int score;
 
 public:
-    PauseModel(App* a, int s);
+    PauseModel(App *a, int s);
+
     virtual void update();
 
-    int getScore(){ return score;}
+    int getScore() { return score; }
 
     void popPause();
+
     void resetGame();
+
     void endGame();
 };
 

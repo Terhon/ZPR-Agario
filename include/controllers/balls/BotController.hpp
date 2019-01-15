@@ -6,12 +6,11 @@
 
 class BotModel;
 
-class BotController : public BallController
-{
+class BotController : public BallController {
 public:
     BotController(BotModel *m);
 
-    virtual void handleEvents(sf::Event event){}
+    virtual void handleEvents(sf::Event event) {}
 };
 
 #endif

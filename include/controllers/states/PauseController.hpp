@@ -7,10 +7,10 @@
 
 class PauseModel;
 
-class PauseController : public StateController
-{
+class PauseController : public StateController {
 public:
-    PauseController(PauseModel* m);
+    PauseController(PauseModel *m);
+
     virtual void handleEvents(sf::Event event);
 };
 

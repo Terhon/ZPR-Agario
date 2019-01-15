@@ -4,11 +4,12 @@
 #include <balls/BallView.hpp>
 #include <balls/PlayerModel.hpp>
 
-class PlayerView : public BallView{
+class PlayerView : public BallView {
 private:
 public:
-    PlayerView(PlayerModel * m, sf::Color * c);
-    virtual void draw(sf::RenderWindow* window);
+    PlayerView(PlayerModel *m, sf::Color *c);
+
+    virtual void draw(sf::RenderWindow *window);
 };
 
 #endif

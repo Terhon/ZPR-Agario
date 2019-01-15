@@ -4,48 +4,45 @@
 
 using namespace std::chrono;
 
-BotModel::BotModel(int x, int y, int r):BallModel(x,y,r)
-{
-    view = new BotView(this, new sf::Color(0,0,255));
+BotModel::BotModel(int x, int y, int r) : BallModel(x, y, r) {
+    view = new BotView(this, new sf::Color(0, 0, 255));
 
     controller = new BotController(this);
     gen = new std::default_random_engine(std::chrono::system_clock::now().time_since_epoch().count());
     std::uniform_int_distribution<int> dist(0, 360);
-    std::uniform_int_distribution<int> distColor(0,255);
+    std::uniform_int_distribution<int> distColor(0, 255);
     view->setColor(new sf::Color(distColor(*gen), distColor(*gen), distColor(*gen)));
     angle = dist(*gen);
     lastDecision = std::chrono::high_resolution_clock::now();
 
-    velX = sin(angle)*velocity;
-    velY = cos(angle)*velocity;
+    velX = sin(angle) * velocity;
+    velY = cos(angle) * velocity;
 }
 
-void BotModel::update()
-{
+void BotModel::update() {
     changeAngle();
 
-    x+=velX;
-    y+=velY;
+    x += velX;
+    y += velY;
 
     keepInWindow();
 }
 
-void BotModel::changeAngle()
-{
+void BotModel::changeAngle() {
     high_resolution_clock::time_point now = high_resolution_clock::now();
-    if(duration_cast<milliseconds>(now - lastDecision) < milliseconds(100))
+    if (duration_cast<milliseconds>(now - lastDecision) < milliseconds(100))
         return;
 
     lastDecision = now;
     std::normal_distribution<double> dist(0.0, 0.1);
     int i = dist(*gen) * 10;
-    angle+=i;
-    if(angle > 360)
-        angle = angle%360;
-    else if(angle<0)
+    angle += i;
+    if (angle > 360)
+        angle = angle % 360;
+    else if (angle < 0)
         angle = 360 - angle;
 
-    velX = sin(angle)*velocity;
-    velY = cos(angle)*velocity;
+    velX = sin(angle) * velocity;
+    velY = cos(angle) * velocity;
 
 }

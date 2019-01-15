@@ -3,27 +3,24 @@
 #include <states/EndModel.hpp>
 #include <balls/BotModel.hpp>
 
-PlayModel::PlayModel(App* a)
-{
+PlayModel::PlayModel(App *a) {
     app = a;
     view = new PlayView(this);
     controller = new PlayController(this);
-    balls = new std::vector<BallModel*>;
+    balls = new std::vector<BallModel *>;
     init();
     foods = 10;
 }
 
-void PlayModel::init()
-{
-    balls->push_back(new PlayerModel(570,370,30));
+void PlayModel::init() {
+    balls->push_back(new PlayerModel(570, 370, 30));
 
     throwBots(10);
     throwFood(10);
 
 }
 
-void PlayModel::update()
-{
+void PlayModel::update() {
     for (auto it = balls->begin(); it != balls->end(); ++it) {
         if ((*it)->getRadius() > 9)
             (*it)->update();
@@ -56,18 +53,15 @@ void PlayModel::update()
     }
 }
 
-int PlayModel::getScore()
-{
+int PlayModel::getScore() {
     return balls->at(0)->getRadius();
 }
 
-void PlayModel::pushPause()
-{
+void PlayModel::pushPause() {
     app->pushStack(new PauseModel(app, getScore()));
 }
 
-void PlayModel::pushEnd()
-{
+void PlayModel::pushEnd() {
     app->pushStack(new EndModel(app, getScore()));
 }
 
@@ -82,12 +76,12 @@ void PlayModel::throwFood(int n) {
     }
 }
 
-void PlayModel::throwBots(int n){
-  std::default_random_engine gen(std::chrono::system_clock::now().time_since_epoch().count());
-  std::uniform_int_distribution<int> distX(-150,-50);
-  std::uniform_int_distribution<int> distY(1,800);
-  std::uniform_int_distribution<int> distR(10,60);
+void PlayModel::throwBots(int n) {
+    std::default_random_engine gen(std::chrono::system_clock::now().time_since_epoch().count());
+    std::uniform_int_distribution<int> distX(-150, -50);
+    std::uniform_int_distribution<int> distY(1, 800);
+    std::uniform_int_distribution<int> distR(10, 60);
 
-  for(int i = 0; i < n; i++)
-      balls->push_back(new BotModel(distX(gen), distY(gen), distR(gen)));
+    for (int i = 0; i < n; i++)
+        balls->push_back(new BotModel(distX(gen), distY(gen), distR(gen)));
 }

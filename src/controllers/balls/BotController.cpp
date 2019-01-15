@@ -1,3 +1,3 @@
 #include <balls/BotController.hpp>
 
-BotController::BotController(BotModel *m):BallController(m) {}
+BotController::BotController(BotModel *m) : BallController(m) {}
