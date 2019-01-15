@@ -31,23 +31,23 @@ void EndView::loadText(){
         ss << "Score: " << 0; //model.getScore() zamiast 0
         std::string s = ss.str();
 
-        score.setFont(font); 
+        score.setFont(font);
         score.setString(s);
         score.setCharacterSize(45); // in pixels, not points!
         score.setFillColor(sf::Color(56, 48, 55));
         score.setStyle(sf::Text::Bold);
-        score.setPosition(270, 120);
+        score.setPosition(290, 220);
 
-        instruction.setFont(font); 
+        instruction.setFont(font);
         instruction.setString("Press R to play again,\nEsc to close\n");
         instruction.setCharacterSize(40); // in pixels, not points!
         instruction.setFillColor(sf::Color(56, 48, 55));
     //    instruction.setStyle(sf::Text::Bold);
-        instruction.setPosition(100, 240);
+        instruction.setPosition(290, 340);
     }
     catch(const std::exception& e){
         std::cout << "Failed loading font" << std::endl;
-    } 
+    }
 
 
 }

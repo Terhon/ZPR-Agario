@@ -27,23 +27,23 @@ void StartView::loadText(){
     try {
         font.loadFromFile("resources/Manjari-Thin.otf");
 
-        title.setFont(font); 
+        title.setFont(font);
         title.setString("Agario 2.0");
         title.setCharacterSize(50); // in pixels, not points!
         title.setFillColor(sf::Color::Black);
         title.setStyle(sf::Text::Bold);
-        title.setPosition(270, 100);
+        title.setPosition(470, 130);
 
-        instruction.setFont(font); 
+        instruction.setFont(font);
         instruction.setString("Eat balls smaller than you,\navoid those that can eat you.\nUse the mouse to move.\n\nPress S to start\nIn game press P to pause");
         instruction.setCharacterSize(40); // in pixels, not points!
         instruction.setFillColor(sf::Color::Black);
     //    instruction.setStyle(sf::Text::Bold);
-        instruction.setPosition(100, 220);
+        instruction.setPosition(290, 250);
     }
     catch(const std::exception& e){
         std::cout << "Failed loading font" << std::endl;
-    } 
+    }
 
 
 }
