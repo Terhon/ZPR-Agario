@@ -15,5 +15,3 @@ void PlayerModel::update()
 
     keepInWindow();
 }
-
-std::vector<BallModel*>::iterator PlayerModel::checkCollision(std::vector<BallModel*>* v) {}

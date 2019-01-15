@@ -5,6 +5,7 @@
 #include <states/PlayView.hpp>
 #include <states/PlayController.hpp>
 #include <balls/BallModel.hpp>
+#include <balls/PlayerModel.hpp>
 #include <vector>
 
 class BallModel;
