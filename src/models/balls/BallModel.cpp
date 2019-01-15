@@ -1,6 +1,9 @@
 #include <balls/BallModel.hpp>
 
-BallModel::BallModel(int x, int y, int r):x(x), y(y), radius(y) {}
+BallModel::BallModel(int x, int y, int r):x(x), y(y), radius(r)
+{
+    velocity = 50/radius;
+}
 
 int BallModel::grow(int eatenRadius){ //eaten ball's radius
     int eatenArea = pow(eatenRadius, 2) * M_PI;

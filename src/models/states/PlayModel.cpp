@@ -2,6 +2,8 @@
 #include <states/PauseModel.hpp>
 #include <states/EndModel.hpp>
 #include <balls/PlayerModel.hpp>
+#include <balls/BotModel.hpp>
+#include <random>
 
 PlayModel::PlayModel(App* a)
 {
@@ -14,10 +16,16 @@ PlayModel::PlayModel(App* a)
 
 void PlayModel::init()
 {
-    balls->push_back(new PlayerModel(100,100,1));
- /*   for(int i = 0; i < 4; i++)
-        balls->push_back(new BotModel());
+    balls->push_back(new PlayerModel(570,370,30));
 
+    std::default_random_engine gen(std::chrono::system_clock::now().time_since_epoch().count());
+    std::uniform_int_distribution<int> distX(100,1100);
+    std::uniform_int_distribution<int> distY(100,800);
+    std::uniform_int_distribution<int> distR(20,50);
+
+    for(int i = 0; i < 4; i++)
+        balls->push_back(new BotModel(distX(gen), distY(gen), distR(gen)));
+/*
     for(int i = 0; i < 10; i++)
         balls->push_back(new FoodModel());*/
 }

@@ -3,10 +3,12 @@
 
 #include <balls/BallModel.hpp>
 
+class BallModel;
+
 class BotModel : public BallModel {
     private:
     public:  
-        BotModel(int x, int y, int radius) : BallModel(x, y, radius) {}
+        BotModel(int x, int y, int r);
         void update(){}
 };
 

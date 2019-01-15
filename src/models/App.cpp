@@ -18,7 +18,7 @@ App::~App(){
 
 void App::initWindow()
 {
-    window->create(sf::VideoMode(800, 600), "ZPR.io");
+    window->create(sf::VideoMode(1200, 800), "ZPR.io");
     window->setFramerateLimit(60);
 }
 

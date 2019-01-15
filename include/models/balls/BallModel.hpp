@@ -17,7 +17,7 @@ protected:
     double x, y;
     double radius;
     double velX = 0, velY = 0;
-    double acceleration;
+    double velocity;
 
 public:
     int getX() {return x;}
@@ -26,6 +26,11 @@ public:
     void setY(int y){this->y = y;}
     int getRadius(){return radius;}
     void setRadius(int radius) {this->radius = radius;}
+    double getVelocity(){return velocity;}
+    void setVelX(double v){velX = v;}
+    double getVelX(){ return velX;}
+    void setVelY(double v){velY = v;}
+    double getVelY(){ return velY;}
 
     virtual std::vector<BallModel*>::iterator checkCollision(std::vector<BallModel*>* v);
 
