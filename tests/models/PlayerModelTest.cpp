@@ -1,5 +1,5 @@
 #define BOOST_TEST_DYN_LINK
-#define BOOST_TEST_MODULE "ObstacleTest"
+#define BOOST_TEST_MODULE "PlaterModelTest"
 
 #include <boost/test/unit_test.hpp>
 
@@ -21,7 +21,7 @@ struct PlayerModelFixture {
 };
 
 BOOST_FIXTURE_TEST_CASE(collision_with_smaller_ball_removes_it, PlayerModelFixture) {
-    std::vector<BallModel *> *v;
+    std::vector<BallModel *>*v = new std::vector<BallModel*>;
 
     v->push_back(new PlayerModel(0, 0, 60));
     v->push_back(new PlayerModel(0, 0, 70));
@@ -33,6 +33,6 @@ BOOST_FIXTURE_TEST_CASE(collision_with_smaller_ball_removes_it, PlayerModelFixtu
 
 BOOST_FIXTURE_TEST_CASE(grow_makes_player_bigger, PlayerModelFixture) {
 
-    p->grow(10);
+    p->grow(20);
     BOOST_CHECK(p->getRadius() > 50);
 }
