@@ -2,9 +2,10 @@
 #include <states/StartModel.hpp>
 #include <states/EndModel.hpp>
 
-PauseModel::PauseModel(App* a)
+PauseModel::PauseModel(App* a, int s)
 {
     app = a;
+    score = s;
     view = new PauseView(this);
     controller = new PauseController(this);
 }
@@ -28,7 +29,7 @@ void PauseModel::resetGame()
 
 void PauseModel::endGame()
 {
-    app->pushStack(new EndModel(app));
+    app->pushStack(new EndModel(app, score));
 }
 
 

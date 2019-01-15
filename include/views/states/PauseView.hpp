@@ -19,6 +19,8 @@ class PauseView : public StateView {
     public:
     virtual void draw(sf::RenderWindow* window);
     void loadText();
+    void updateScore();
+
     PauseView(PauseModel* m);
 };
 

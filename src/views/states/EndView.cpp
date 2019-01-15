@@ -28,7 +28,7 @@ void EndView::loadText(){
         font.loadFromFile("resources/Manjari-Thin.otf");
 
         std::stringstream ss;
-        ss << "Score: " << 0; //model.getScore() zamiast 0
+        ss << "Score: " << dynamic_cast<EndModel*>(model)->getScore();
         std::string s = ss.str();
 
         score.setFont(font); 

@@ -7,9 +7,14 @@
 
 class PauseModel : public StateModel
 {
-    public:
-    PauseModel(App* a);
+private:
+    int score;
+
+public:
+    PauseModel(App* a, int s);
     virtual void update();
+
+    int getScore(){ return score;}
 
     void popPause();
     void resetGame();

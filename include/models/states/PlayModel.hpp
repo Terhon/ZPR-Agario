@@ -21,6 +21,8 @@ public:
 
     std::vector<BallModel*>* getBalls(){return balls;}
 
+    int getScore();
+
     void init();
     void pushPause();
     void pushEnd();

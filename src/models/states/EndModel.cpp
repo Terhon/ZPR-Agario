@@ -1,9 +1,10 @@
 #include <states/EndModel.hpp>
 #include <states/StartModel.hpp>
 
-EndModel::EndModel(App* a)
+EndModel::EndModel(App* a, int s)
 {
     app = a;
+    score = s;
     view = new EndView(this);
     controller = new EndController(this);
 }

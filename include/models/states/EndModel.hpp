@@ -7,9 +7,14 @@
 
 class EndModel : public StateModel 
 {
-    public:
-    EndModel(App* a);
+private:
+    int score;
+
+public:
+    EndModel(App* a, int s);
     virtual void update();
+
+    int getScore(){ return score;}
 
     void resetGame();
     void exitGame();
